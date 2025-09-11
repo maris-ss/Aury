@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Aury</title>
+  <link rel="stylesheet" href="./css/login.css" />
+</head>
+
+<body>
+
+    <!-- <video id="intro-video" autoplay>
+    <source src="./image/intro.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo em HTML5.
+  </video> -->
+  
+  <div class="background">
+    <img src="./image/elipse1.png" alt="elipse1" class="elipse elipse1" />
+    <img src="./image/elipse2.png" alt="elipse2" class="elipse elipse2" />
+    <img src="./image/elipse3.png" alt="elipse3" class="elipse elipse3" />
+  </div>
+
+  <div class="circle-container">
+    <form id="form-cadastro" action="http://127.0.0.1:8000/cadastro" method="post">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="form-container">
+              <label for="nome">nome</label>
+              <input type="text" id="nome" name="nome" required />
+
+              <label for="nome_usuario">username</label>
+              <input type="text" id="nome_usuario" name="nome_usuario" required />
+
+              <label for="email">email</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="senha">senha</label>
+              <input type="password" id="senha" name="senha" required />
+            </div>
+          </div>
+
+          <div class="flip-card-back">
+            <div class="form-container">
+              <label for="id_genero">gênero</label>
+              <select id="id_genero" name="id_genero" required>
+                <option value="">Selecione</option>
+                <option value="1">Masculino</option>
+                <option value="2">Feminino</option>
+                <option value="3">Outro</option>
+              </select>
+
+              <label for="id_tipo_usuario">tipo de user</label>
+              <select id="id_tipo_usuario" name="id_tipo_usuario" required>
+                <option value="">Selecione</option>
+                <option value="1">Administrador</option>
+                <option value="2">Usuário Comum</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="floating-btn" id="flip-btn">→</button>
+    </form>
+  </div>
+  
+   <script>
+    const video = document.getElementById("intro-video");
+    const mainContent = document.getElementById("main-content");
+
+    video.addEventListener("ended", () => {
+      video.classList.add("hidden"); 
+      mainContent.classList.remove("hidden");
+    });
+  </script>
+  <script>
+  const flipBtn = document.getElementById("flip-btn");
+  const flipCardInner = document.querySelector(".flip-card-inner");
+  let flipped = false;
+
+  flipBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    if (!flipped) {
+      flipCardInner.classList.add("flipped");
+      flipped = true;
+    } else {
+
+      window.location.href = "home.html"; 
+    }
+  });
+</script>
+
+</body>
+
+</html>

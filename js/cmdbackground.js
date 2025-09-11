@@ -115,7 +115,7 @@ humanCheckButton.addEventListener("click", () => {
     const noButton = document.getElementById("no-button");
 
     yesButton.addEventListener("click", () => {
-      startGlitchTransition("index.html");
+      startGlitchTransition("login.html");
     });
 
     noButton.addEventListener("click", () => {
