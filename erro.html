@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aury</title>
+    <link rel="stylesheet" href="./css/cmd.css">
+    <link rel="stylesheet" href="./css/nao.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&family=Orbitron:wght@400&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <audio id="bg-music" src="./image/alert.mp3" loop></audio>
+    
+    <div class="glitch-container">
+        <div class="glitch title">
+            <div class="line">ERRO</div>
+            <div class="line">ERRO</div>
+            <div class="line">ERRO</div>
+            <div class="line">ERRO</div>
+            <div class="line">ERRO</div>
+            <div class="line">ERRO</div>
+            <div class="line">ERRO</div>
+            <div class="line">ERRO</div>
+            <div class="line">ERRO</div>
+        </div>
+
+        <div class="glitch paragraph">
+            <div class="line">O FUTURO DA HUMANIDADE FOI COMPROMETIDO</div>
+            <div class="line">O FUTURO DA HUMANIDADE FOI COMPROMETIDO</div>
+            <div class="line">O FUTURO DA HUMANIDADE FOI COMPROMETIDO</div>
+            <div class="line">O FUTURO DA HUMANIDADE FOI COMPROMETIDO</div>
+            <div class="line">O FUTURO DA HUMANIDADE FOI COMPROMETIDO</div>
+            <div class="line">O FUTURO DA HUMANIDADE FOI COMPROMETIDO</div>
+            <div class="line">O FUTURO DA HUMANIDADE FOI COMPROMETIDO</div>
+            <div class="line">O FUTURO DA HUMANIDADE FOI COMPROMETIDO</div>
+            <div class="line">O FUTURO DA HUMANIDADE FOI COMPROMETIDO</div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("click", () => {
+            const audio = document.getElementById("bg-music");
+            audio.play();
+        }, { once: true });
+    </script>
+
+</body>
+
+</html>

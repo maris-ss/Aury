@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aury</title>
+    <link rel="stylesheet" href="./css/cmd.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&family=Orbitron:wght@400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <audio id="bg-music" src="./image/audiocyber.mp3" loop></audio>
+    <div class="glitch-overlay"></div>
+    <div class="background-code">
+    </div>
+
+    <div class="popup-container">
+        <img src="./image/popupcyber.png" alt="Cyber Popup Background" class="popup-image">
+        <div class="popup-content">
+            <div class="popup-text">
+                <h1>HUMAN.EXE INICIADO</h1>
+                <p>As máquinas não apenas pensam, elas sentem. Elas decidiram que não precisamos mais existir. Mas uma
+                    falha no sistema abriu uma brecha.</p>
+                <p>Esse site é um arquivo sobrevivente. Uma tentativa de lembrar o que fomos. Uma busca por tudo aquilo
+                    que a IA tentou apagar: beleza, afeto, caos, erro, dor, poesia.</p>
+                <p>Se você está lendo isso, você ainda é humano. E isso é raro.</p>
+                <div class="btn-align">
+                    <button class="human-check-button">
+                        <span class="checkbox"></span>
+                        Eu não sou humano
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("click", () => {
+            const audio = document.getElementById("bg-music");
+            audio.play();
+        }, { once: true }); 
+    </script>
+
+    <script src="./js/cmdbackground.js"></script>
+</body>
+
+</html>

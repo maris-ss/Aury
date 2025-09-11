@@ -1,0 +1,353 @@
+:root {
+    --bg-color: #0D0D0D;
+    --code-back-color: #512978;
+    --code-mid-color: #7033A0; 
+    --code-front-color: #8840D0;
+    --h1-color: #D99EFF;
+    --p-color: #ffffff;
+    --button-bg: #916BF9;
+    --checkbox-color: #251B66;
+    --text-button-color: #251B66;
+    --popup-border-color: #916BF9; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; 
+    font-family: 'Fira Code', monospace;
+    background-color: var(--bg-color);
+    position: relative;
+    color: var(--p-color);
+}
+
+.glitch-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    animation: glitch-anim 5s infinite linear alternate;
+    background: transparent;
+}
+
+@keyframes glitch-anim {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0);
+        box-shadow: none;
+    }
+    1% {
+        opacity: 0.1;
+        transform: translate(random(20px, -20px), random(20px, -20px));
+        box-shadow: 0 0 50px rgba(136, 64, 208, 0.4), 0 0 100px rgba(136, 64, 208, 0.2);
+    }
+    2% {
+        opacity: 0;
+        transform: translate(0, 0);
+        box-shadow: none;
+    }
+
+    30% { opacity: 0; }
+    31% { opacity: 0.1; transform: translate(random(10px, -10px), random(10px, -10px)); }
+    32% { opacity: 0; }
+    60% { opacity: 0; }
+    61% { opacity: 0.08; transform: translate(random(15px, -15px), random(15px, -15px)); }
+    62% { opacity: 0; }
+}
+
+
+.background-code {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    perspective: 800px;
+    z-index: 1;
+}
+
+.code-line {
+    position: absolute;
+    white-space: nowrap;
+    opacity: 0; 
+    animation: float-vertical 25s linear infinite; 
+    user-select: none;
+    pointer-events: none;
+}
+
+.code-line.back {
+    font-size: 14px; 
+    color: var(--code-back-color);
+    animation-duration: 30s; 
+    transform: translateZ(-200px) scale(0.9);
+}
+
+.code-line.mid {
+    font-size: 18px; 
+    color: var(--code-mid-color);
+    animation-duration: 25s; 
+    transform: translateZ(-100px) scale(1);
+}
+
+.code-line.front {
+    font-size: 22px; 
+    color: var(--code-front-color);
+    animation-duration: 20s; 
+    transform: translateZ(0) scale(1.1);
+}
+
+@keyframes float-vertical {
+    0% {
+        transform: translateY(100vh) translateZ(var(--z-index-depth)) scale(var(--scale-depth)); /* Começa abaixo da tela */
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7; 
+    }
+    90% {
+        opacity: 0.7; 
+    }
+    100% {
+        transform: translateY(-100vh) translateZ(var(--z-index-depth)) scale(var(--scale-depth)); /* Termina acima da tela */
+        opacity: 0; 
+    }
+}
+
+
+.popup-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 900px; 
+    height: 700px; 
+}
+
+.popup-image {
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    z-index: 1; 
+}
+
+.popup-text{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.popup-content {
+    text-align: center;
+    padding: 30px;
+    color: var(--p-color);
+    position: relative; 
+    z-index: 2; 
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+}
+
+.popup-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--h1-color);
+    font-size: 24px;
+    margin-bottom: 5px; 
+    text-shadow: 0 0 10px rgba(217, 158, 255, 0.5);
+}
+
+.popup-content p {
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    color: var(--p-color);
+    margin-bottom: 5px; 
+    line-height: 1.5;
+}
+
+.human-check-button {
+    background-color: var(--button-bg);
+    border: none;
+    color: var(--text-button-color);
+    padding: 10px 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(145, 107, 249, 0.4);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.human-check-button:hover {
+    background-color: #7a50e0;
+    box-shadow: 0 0 20px rgba(145, 107, 249, 0.8);
+}
+
+.human-check-button .checkbox {
+    width: 18px;
+    height: 18px;
+    background-color: var(--checkbox-color);
+    border: 2px solid var(--checkbox-color);
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 3px;
+    position: relative;
+}
+
+.human-check-button .checkbox::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #D99EFF;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.human-check-button.checked .checkbox::after {
+    transform: rotate(45deg) scale(1);
+}
+
+.popup-content.loaded {
+    animation: fadeOutPopupContent 0.5s forwards; 
+}
+
+.popup-content.show-new {
+    opacity: 0;
+    animation: fadeInPopupContent 0.5s forwards 0.5s; 
+}
+
+@keyframes fadeOutPopupContent {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-20px); }
+}
+
+@keyframes fadeInPopupContent {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.popup-content h1.new-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--h1-color); 
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(217, 158, 255, 0.5);
+}
+
+
+.popup-content .prompt-text {
+    font-family: 'Fira Code', monospace;
+    font-size: 18px; 
+    color: var(--p-color);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+
+.popup-content .choice-button {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin: 5px 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative; 
+    display: inline-block; 
+}
+
+.popup-content .choice-button:hover {
+    color: #D99EFF;
+    text-shadow: 0 0 15px rgba(217, 158, 255, 0.7);
+}
+
+.transition-glitch-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 1000; 
+    display: none; 
+    overflow: hidden; 
+}
+
+.glitch-square {
+    position: absolute;
+    background-color: var(--bg-color);
+    animation: glitch-shatter 1s forwards; 
+    opacity: 0;
+}
+
+@keyframes glitch-shatter {
+    0% {
+        opacity: 0;
+        transform: scale(1) rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.5) rotate(var(--random-rotate)); 
+        filter: hue-rotate(var(--random-hue)); 
+    }
+}
+
+body.transitioning .popup-container,
+body.transitioning .glitch-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.btn-align {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--code-front-color); 
+    border-top: 3px solid var(--h1-color); 
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto; 
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

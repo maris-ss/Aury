@@ -1,0 +1,150 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Pecita';
+  src: url('../fonts/Pecita.woff2') format('woff2'),
+    url('../fonts/Pecita.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Pecita', Arial, sans-serif;
+  background: linear-gradient(to bottom right, #8E8ADD, #8EC9D9);
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.intro-section {
+  color: #ffffff;
+  padding: 20px;
+}
+
+.intro-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.intro-section p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 10px auto;
+    font-family: 'Prata', serif;
+}
+
+
+.arrow-image {
+  margin-top: 30px;
+  width: 15px;
+  cursor: pointer;
+  display: inline-block;
+  animation: floatArrow 1s ease-in-out infinite alternate;
+}
+
+@keyframes floatArrow {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(15px);
+  }
+}
+
+.guia,
+.guia-frase {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.guia img {
+  width: 45rem;
+}
+
+.guia-frase img {
+  width: 50rem;
+}
+
+.resposta {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.resposta label {
+  color: #fff; 
+  font-size: 24px
+}
+
+.resposta input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-size: 24px;
+  outline: none;
+  width: 30rem;
+  text-align: center;
+  font-family: "Pecita", sans-serif;
+}
+
+.floating-btn {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #aaaaaa; 
+  font-family: "Pecita", sans-serif;
+  color: white;
+  font-size: 28px;
+  border: none;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  cursor: default; 
+  pointer-events: none; 
+}
+
+.floating-btn.completed {
+  background-color: #9876f0; 
+  cursor: pointer; 
+  pointer-events: auto; 
+}
+
+.floating-btn.completed:hover {
+  background-color: rgb(120, 85, 190); 
+}
+
+
+.align-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px; }

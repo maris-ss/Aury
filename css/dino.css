@@ -1,0 +1,193 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+@font-face {
+  font-family: 'Pecita';
+  src: url('../fonts/Pecita.woff2') format('woff2'),
+       url('../fonts/Pecita.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(to bottom left, #8481D8, #CAC0FF);
+    font-family: 'Pecita', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.intro-section {
+    flex-direction: column;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.intro-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.intro-section p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 10px auto;
+    font-family: 'Prata', serif;
+}
+
+.arrow-image {
+    margin-top: 30px;
+    width: 15px;
+    cursor: pointer;
+      display: inline-block;
+  animation: floatArrow 1s ease-in-out infinite alternate;
+}
+
+@keyframes floatArrow {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(15px); 
+  }
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: transparent;
+  }
+
+  .score {
+    color: white;
+    font-family: sans-serif;
+    font-size: 24px;
+    text-align: center;
+    font-family: "Pecita", sans-serif;
+  }
+
+  .score.final {
+    font-family: "Pecita", sans-serif;
+    font-size: 28px;
+  }
+
+  .game {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    border-bottom: 2px solid white;
+    background: transparent;
+    overflow: visible; 
+  }
+
+  .player {
+    position: absolute;
+    bottom: 2px;
+    left: 50px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+
+
+.obstacle {
+  position: absolute;
+  bottom: 2px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid white;
+  background: transparent;
+}
+
+
+  .jump {
+    animation: jump 0.6s ease-out;
+  }
+
+  @keyframes jump {
+    0% { bottom: 2px; }
+    50% { bottom: 110px; }
+    100% { bottom: 2px; }
+  }
+
+  .retry-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 24px;
+    font-size: 18px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    font-family: "Pecita", sans-serif;
+    border-radius: 100px;
+    cursor: pointer;
+    z-index: 999; 
+  }
+  .retry-btn:hover {
+    background: rgba(255,255,255,0.1);
+  }
+
+ 
+  .floating-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #aaaaaa;
+    font-family: "Pecita", sans-serif;
+    color: white;
+    font-size: 28px;
+    border: none;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .floating-btn.completed {
+    background-color: #9876f0;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .floating-btn.completed:hover {
+    background-color: rgb(120, 85, 190);
+  }
+
+  .align-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
