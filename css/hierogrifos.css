@@ -49,7 +49,7 @@ body::-webkit-scrollbar {
     font-size: 1.3rem;
     max-width: 800px;
     margin: 10px auto;
-    font-family: 'Prata', serif;
+      font-family: 'Josefin Sans', sans-serif;
 }
 
 

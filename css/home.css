@@ -356,7 +356,7 @@ p {
 
 p .highlight {
     color: #72678d;
-    font-family: 'Prata', serif;
+      font-family: 'Josefin Sans', sans-serif;
 }
 
 
@@ -432,3 +432,36 @@ p .highlight {
 .floating-btn:hover {
     background-color: #5c5270;
 }
+
+hero {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: rgba(255, 255, 255, 0.2); /* leve fundo transparente opcional */
+      backdrop-filter: blur(5px); /* efeito glass */
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: 'Pecita', cursive;
+      font-size: 32px;
+      color: #72678D;
+    }
+
+    nav a {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 18px;
+      color: #72678D;
+      text-decoration: none;
+      margin-left: 25px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #4f4666;
+    }

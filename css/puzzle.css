@@ -48,7 +48,7 @@ section {
     font-size: 1.3rem;
     max-width: 800px;
     margin: 10px auto;
-    font-family: 'Prata', serif;
+      font-family: 'Josefin Sans', sans-serif;
 }
 
 .arrow-image {
@@ -159,7 +159,6 @@ section {
 .floating-btn.completed:hover {
   background-color: rgb(120, 85, 190); 
 }
-
 
 .align-btn {
     width: 100%;
