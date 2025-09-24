@@ -1,98 +1,315 @@
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
-    font-family: "Pecita";
-    src: url("../fonts/Pecita.woff2") format("woff2"),
-        url("../fonts/Pecita.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Pecita';
+  src: url('../fonts/Pecita.woff2') format('woff2'),
+       url('../fonts/Pecita.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
-    display: grid;
-    place-items: center;
-    background: linear-gradient(to bottom right, #cac0ff, #8481d8);
-    min-height: 100vh;
-    color: white;
-    font-family: "Pecita", sans-serif;
+  overflow-x: hidden;
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar { display: none; }
+
+/* Header */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Pecita', cursive;
+  font-size: 32px;
+  color: #72678D;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  color: #72678D;
+}
+
+/* Containers */
+.tela {
   display: none;
+  padding-top: 80px;
+}
+.tela.ativa {
+  display: block;
 }
 
-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      background: rgba(255, 255, 255, 0.2); /* leve fundo transparente opcional */
-      backdrop-filter: blur(5px); /* efeito glass */
-      z-index: 1000;
-    }
-
-    .logo {
-      font-family: 'Pecita', cursive;
-      font-size: 32px;
-      color: #72678D;
-    }
-
-    nav a {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 18px;
-      color: #72678D;
-      text-decoration: none;
-      margin-left: 25px;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #4f4666;
-    }
-
-
-section {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+#tela-produtos {
+  background: linear-gradient(#929AE9, #E6E9FF, #929AE9);
+  min-height: 100vh;
 }
 
-.textos {
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+/* Introdução */
+.intro-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
 }
 
-.texto-direita {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
+.intro-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 34rem;
+  z-index: 0;
 }
 
-.texto-centro {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+.intro-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 100%;
+  height: 70%;
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-.texto-centro button {
+.intro-left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
 
+.intro-left h1 {
+  font-size: 2.4rem;
+  font-weight: normal;
+  margin-bottom: 10px;
+  font-family: 'Pecita', cursive;
+  color: #72678D;
+}
+
+.intro-left .whiter {
+  color: #ffffff;
+}
+
+.intro-left .fonte, .intro-center .fonte {
+  font-family: 'Pecita', cursive;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.intro-center .risco {
+  text-decoration: line-through;
+}
+
+.intro-left .break {
+  width: 57%;
+}
+
+.intro-left p {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.intro-center {
+  align-self: center;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.intro-center p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+    color: #72678D;
+
+}
+
+.intro-center button {
+  background: #72678D;
+  border-radius: 70px;
+  padding: 18px 40px;
+  color: #fff;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.intro-center button:hover {
+  transform: scale(1.1);
+}
+
+.grid-wrapper {
+  margin: 0 auto;
+  /* min-width: 80%; */
+  width: 90%;
+  background: rgba(152, 148, 227, 0.5); /* #9894E3 50% */
+  box-shadow: inset 10px 7px 34px 1px rgba(29, 17, 140, 0.25);
+  padding: 40px;
+  height: 130vh;
+  border: 1px solid #fff;
+}
+
+/* Grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 17rem);
+  grid-template-rows: repeat(4, 10.5rem);
+  gap: 20px 12px; /* vertical maior que horizontal */
+  height: 100%;
+  border: 1px solid #e61d1d;
+}
+
+.grid-item {
+  position: relative;
+  background: #333;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  flex: 1;
+  object-fit: cover;
+}
+
+.grid-item p {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Layout especial */
+.grid1 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+.grid8 {
+  grid-column: 3 / 5;
+  grid-row: 3 / 4;
+}
+
+.clicavel {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.clicavel:hover {
+  transform: scale(1.05);
+}
+
+/* Tela produto */
+.produto-detalhe {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+.produto-detalhe img {
+  width: 50%;
+  border-radius: 10px;
+}
+.produto-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'Josefin Sans', sans-serif;
+  gap: 10px;
+}
+.produto-info button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #72678D;
+  color: #fff;
+}
+
+/* Sacola */
+.sacola-container {
+  padding: 20px;
+}
+.sacola-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+.sacola-item img {
+  width: 80px;
+  border-radius: 6px;
+}
+.sacola-item-info {
+  flex: 1;
+  margin-left: 10px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Pagamento */
+.pagamento-container {
+  padding: 20px;
+}
+.pagamento-card {
+  width: 80%;
+  margin: 10px auto;
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+  background: #fff;
+}
+.pagamento-card img {
+  width: 120px;
+  border-radius: 6px;
+}
+.pagamento-info {
+  flex: 1;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.total {
+  margin-top: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
 }
