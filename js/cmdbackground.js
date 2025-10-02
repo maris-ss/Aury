@@ -134,6 +134,7 @@ humanCheckButton.addEventListener("click", () => {
       const square = document.createElement("div");
       square.classList.add("glitch-square");
 
+      // Posição aleatória
       square.style.top = Math.random() * 100 + "vh";
       square.style.left = Math.random() * 100 + "vw";
       square.style.width = Math.random() * 10 + 5 + "vw"; 
