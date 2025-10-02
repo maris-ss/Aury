@@ -121,7 +121,7 @@ body::-webkit-scrollbar {
 
     ul {
         --step: calc((var(--end) - var(--start)) / (var(--count) - 1));
-        background: linear-gradient(#72678D, #ffffff);
+        background: linear-gradient(#9BD4E8, #ffffff);
 
         -webkit-background-clip: text;
         background-clip: text;
@@ -321,6 +321,14 @@ section {
   z-index: 10; 
 }
 
+.aury-mascot {
+    position: absolute;
+  width: 19rem;
+  bottom: 0;
+  right: 0;
+  z-index: 10; 
+}
+
 .text-center {
     width: 60%;
     height: 60%;
@@ -339,9 +347,10 @@ h2 {
 }
 
 h3 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #72678d;
     font-weight: semi-bold;
+        font-family: 'Josefin Sans', sans-serif;
 }
 
 p {
@@ -351,7 +360,7 @@ p {
     text-align: center;
     color: #fff;
     font-weight: 400;
-    font-family: 'Prata', serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 p .highlight {
@@ -378,6 +387,7 @@ p .highlight {
     cursor: pointer;
 }
 
+
 .arco img {
     width: 80%;
     transition: 0.8s ease;
@@ -400,7 +410,7 @@ p .highlight {
 
 .arco:hover::after {
     content: attr(data-hover);
-    font-size: 40px;
+    font-size: 2rem;
     color: #fff;
     position: absolute;
 }
@@ -433,35 +443,60 @@ p .highlight {
     background-color: #5c5270;
 }
 
-hero {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      background: rgba(255, 255, 255, 0.2); /* leve fundo transparente opcional */
-      backdrop-filter: blur(5px); /* efeito glass */
-      z-index: 1000;
-    }
+.navbar {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-    .logo {
-      font-family: 'Pecita', cursive;
-      font-size: 32px;
-      color: #72678D;
-    }
+.logo {
+  font-family: 'Pecita', sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+}
 
-    nav a {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 18px;
-      color: #72678D;
-      text-decoration: none;
-      margin-left: 25px;
-      transition: color 0.3s ease;
-    }
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
 
-    nav a:hover {
-      color: #4f4666;
-    }
+.nav-links a {
+  text-decoration: none;
+  color: #695F8B;
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+
+.elipse {
+  animation: pulse 4s ease-in-out infinite;
+  opacity: 0.7;
+    transform-origin: center center; 
+  will-change: transform; 
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(0.9); }
+  50% { transform: scale(1); } 
+}

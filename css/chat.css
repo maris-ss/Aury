@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Configuração do Background e Centralização */
 .background-container {
     background-image: url('../image/ChatScreen.webp');
     background-size: cover;
@@ -16,7 +15,6 @@
     justify-content: center;
 }
 
-/* ⚡️ O CHATBOX CENTRALIZADO (CAIXA ROXA) ⚡️ */
 .main-chat-box {
     background-color: #A8A6DA; 
     width: 90%; 
@@ -26,7 +24,6 @@
     border-radius: 20px; 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
     
-    /* Layout Flexbox vertical para fixar header/input e rolar o chat */
     display: flex;
     flex-direction: column;
     overflow: hidden; 
@@ -38,7 +35,6 @@
     flex-direction: column;
 }
 
-/* --- Header: Fixo no Topo --- */
 .header {
     background-color: #A8A6DA; 
     z-index: 10;
@@ -48,13 +44,12 @@
     padding-bottom: 10px;
     align-items: center;
     text-align: center;
-    /* Impede que o header encolha */
     flex-shrink: 0; 
 }
 
 .header-subtitle {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     color: rgba(255, 255, 255, 0.7);
     margin-top: 5px;
     max-width: 85%;
@@ -62,12 +57,11 @@
     margin-right: auto;
 }
 
-/* --- Área de Mensagens: ROLA AQUI --- */
 .chat-container {
     flex: 1; 
     overflow-y: auto; 
     padding: 15px;
-    min-height: 0; /* Ajuda o Flexbox */
+    min-height: 0; 
 }
 
 .chat-container::-webkit-scrollbar {
@@ -110,7 +104,6 @@
     border-top-right-radius: 5px; 
 }
 
-/* --- Área de Mensagens: ROLA AQUI --- */
 .chat-container {
     flex: 1; 
     overflow-y: auto; 
@@ -118,15 +111,12 @@
     min-height: 0; 
 }
 
-/* --- Área de Input/Opções: Fixa no Rodapé --- */
 .input-container {
     background-color: #A8A6DA; 
     z-index: 10;
     padding: 15px;
     padding-bottom: 30px; 
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-
-    /* Fixar no fim da main-chat-box */
     position: sticky;
     bottom: 0;
     display: flex;
@@ -161,7 +151,7 @@
 .next-button {
     background-color: #72678d; 
     border-radius: 60px;
-    width: 150px;   /* só o "Próximo" fica menor */
+    width: 150px;   
     margin: 0 auto; 
     align-self: center;
 }

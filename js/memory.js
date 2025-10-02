@@ -1,6 +1,5 @@
 const gameArea = document.querySelector(".game-area");
 
-// 🔹 Deixa os cards invisíveis até o scroll
 document.querySelectorAll(".card").forEach((card) => {
   card.style.opacity = "0";
   card.style.transform = "translateY(50px) scale(0.8)";
@@ -12,7 +11,6 @@ const observer = new IntersectionObserver(
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
 
-        // animação GSAP só 1x
         gsap.to(".card", {
           opacity: 1,
           y: 0,
@@ -22,7 +20,6 @@ const observer = new IntersectionObserver(
           stagger: 0.15,
         });
 
-        // para de observar depois da primeira vez
         obs.unobserve(entry.target);
       }
     });
@@ -61,7 +58,6 @@ function onCardClick(card) {
 
       if (matches === totalPairs) {
         setTimeout(() => {
-          // Mostrar popup de parabéns
           const popup = document.getElementById("congrats-popup");
           popup.classList.add("active");
           popup.setAttribute("aria-hidden", "false");

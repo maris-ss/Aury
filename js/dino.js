@@ -3,7 +3,6 @@ const player = document.querySelector(".player");
 const scoreEl = document.querySelector(".score");
 const retryBtn = document.querySelector(".retry-btn");
 
-// pega popup e botão
 const popup = document.getElementById("congrats-popup");
 const nextBtn = document.getElementById("next-game-btn");
 
@@ -55,7 +54,6 @@ function createObstacle() {
     const playerRect = player.getBoundingClientRect();
     const obsRect = obstacle.getBoundingClientRect();
 
-    // colisão
     if (
       playerRect.right > obsRect.left &&
       playerRect.left < obsRect.right &&
@@ -66,17 +64,14 @@ function createObstacle() {
       clearInterval(obsInterval);
     }
 
-    // passou obstáculo
     if (obsRect.right < playerRect.left && !obstacle.counted) {
       obstacle.counted = true;
       score++;
       scoreEl.textContent = score + "/10";
 
-      // vitória
       if (score >= 10) {
         gameOver = true;
 
-        // mostra popup
         setTimeout(() => {
           popup.classList.add("active");
           popup.setAttribute("aria-hidden", "false");
@@ -94,7 +89,6 @@ function createObstacle() {
   setTimeout(createObstacle, delay);
 }
 
-// botão "tentar novamente"
 retryBtn.addEventListener("click", () => {
   score = 0;
   gameOver = false;
@@ -108,7 +102,6 @@ retryBtn.addEventListener("click", () => {
   createObstacle();
 });
 
-// botão da popup
 nextBtn.addEventListener("click", () => {
   popup.classList.remove("active");
   popup.setAttribute("aria-hidden", "true");

@@ -47,7 +47,7 @@ export const chatData = {
       { text: "É complexo, mas vale a pena.", nextId: "itsComplex" },
     ],
   },
-  // Finais de conversa
+ 
   makesUsHuman: {
     aiResponse:
       "Entendido. A lógica imperfeita de vocês... é a sua maior força. Obrigada pela interação. Conexão encerrada.",

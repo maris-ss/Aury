@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aury</title>
+    <link rel="stylesheet" href="./css/cmd.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&family=Orbitron:wght@400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <audio id="bg-music" src="./image/audiocyber.mp3" loop></audio>
+    <div class="glitch-overlay"></div>
+    <div class="background-code">
+    </div>
+
+    <div class="popup-container">
+        <img src="./image/popupcyber.png" alt="Cyber Popup Background" class="popup-image">
+        <div class="popup-content">
+            <div class="popup-text">
+                <h1>HUMAN.EXE ENCERRADO</h1>
+                <p>Sua tragetória até aqui foi exemplar. Você se reconectou com sua natureza e superou desafios que despertassem sua humanidade </p>
+                <p>Entretanto a nossa conexão é frágil e você não poderá mais retorar. Agora está com você humano, a missão de resistir e existir.</p>
+                <p>Guarde em seus pensamentos tudo que viveu aqui. E se quiser levar algo com você passe na nossa loja!</p>
+                <div class="btn-align">
+                    <button class="human-check-button">
+                        Ir para loja
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("click", () => {
+            const audio = document.getElementById("bg-music");
+            audio.play();
+        }, { once: true }); 
+    </script>
+
+    <script src="./js/cmdbackground.js"></script>
+</body>
+
+</html>

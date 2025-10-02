@@ -134,12 +134,10 @@ section {
 
 
 
-
-/* Popup Overlay */
 .popup-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(85, 85, 85, 0.418);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,18 +147,16 @@ section {
   z-index: 999;
 }
 
-/* Ativa popup */
 .popup-overlay.active {
   opacity: 1;
   visibility: visible;
 }
 
-/* Conteúdo da popup */
 .popup-content {
-  background: linear-gradient(to bottom right, #8E8ADD, #8EC9D9);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(42px);
   color: #fff;
   padding: 2rem;
-  border-radius: 20px;
   text-align: center;
   max-width: 400px;
   width: 90%;
@@ -169,14 +165,13 @@ section {
   animation: popupScale 0.5s ease forwards;
 }
 
-/* Animação entrada */
 @keyframes popupScale {
   from { transform: scale(0.7); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
 
 .popup-content h2 {
-  font-family: 'Prata', serif;
+  font-family: 'Pecita', serif;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -187,7 +182,7 @@ section {
 }
 
 .popup-content button {
-  background-color: #9876f0;
+  background-color: #72678D;
   border: none;
   padding: 10px 20px;
   border-radius: 50px;
@@ -195,8 +190,55 @@ section {
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .popup-content button:hover {
   background-color: rgb(120, 85, 190);
+}
+
+
+.navbar {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+  font-family: 'Pecita', sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #695F8B;
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
 }

@@ -48,8 +48,6 @@ const sync = (event) => {
   document.startViewTransition(() => update());
 };
 
-ctrl.addBinding(config, "animate", { label: "Animate" });
-ctrl.addBinding(config, "snap", { label: "Snap" });
 ctrl.addBinding(config, "start", {
   label: "Hue Start",
   min: 0,
@@ -153,3 +151,22 @@ chromaExit = gsap.fromTo(
 );
 
 update();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const arcos = document.querySelectorAll(".arco");
+
+  arcos.forEach(arco => arco.classList.add("pre-anim"));
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view"); 
+        obs.unobserve(entry.target); 
+      }
+    });
+  }, {
+    threshold: 0.3 
+  });
+
+  arcos.forEach(arco => observer.observe(arco));
+});

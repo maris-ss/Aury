@@ -30,7 +30,6 @@ const imageFiles = [
 
 const puzzleGrid = document.getElementById("puzzle-grid");
 
-// popup
 const popup = document.getElementById("congrats-popup");
 const nextBtn = document.getElementById("next-game-btn");
 
@@ -75,7 +74,6 @@ const checkWin = () => {
   );
 
   if (isComplete) {
-    // mostra popup ao vencer
     setTimeout(() => {
       popup.classList.add("active");
       popup.setAttribute("aria-hidden", "false");
