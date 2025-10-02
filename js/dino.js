@@ -2,7 +2,10 @@ const game = document.querySelector(".game");
 const player = document.querySelector(".player");
 const scoreEl = document.querySelector(".score");
 const retryBtn = document.querySelector(".retry-btn");
-const floatingBtn = document.querySelector(".floating-btn");
+
+// pega popup e botão
+const popup = document.getElementById("congrats-popup");
+const nextBtn = document.getElementById("next-game-btn");
 
 let jumping = false;
 let score = 0;
@@ -11,7 +14,7 @@ let gameStarted = false;
 
 document.addEventListener("keydown", (e) => {
   if (e.code === "ArrowUp") {
-    e.preventDefault(); 
+    e.preventDefault();
     if (!gameStarted && !gameOver) {
       gameStarted = true;
       createObstacle();
@@ -36,7 +39,7 @@ function createObstacle() {
 
   const obstacle = document.createElement("div");
   obstacle.classList.add("obstacle");
-  obstacle.style.left = game.offsetWidth + "px"; 
+  obstacle.style.left = game.offsetWidth + "px";
   game.appendChild(obstacle);
 
   let obsInterval = setInterval(() => {
@@ -46,12 +49,13 @@ function createObstacle() {
     }
 
     let obsLeft = parseInt(obstacle.style.left);
-    obsLeft -= 4; 
+    obsLeft -= 4;
     obstacle.style.left = obsLeft + "px";
 
     const playerRect = player.getBoundingClientRect();
     const obsRect = obstacle.getBoundingClientRect();
 
+    // colisão
     if (
       playerRect.right > obsRect.left &&
       playerRect.left < obsRect.right &&
@@ -62,20 +66,25 @@ function createObstacle() {
       clearInterval(obsInterval);
     }
 
+    // passou obstáculo
     if (obsRect.right < playerRect.left && !obstacle.counted) {
       obstacle.counted = true;
       score++;
+      scoreEl.textContent = score + "/10";
+
+      // vitória
       if (score >= 10) {
-        scoreEl.textContent = "parabens! você superou os obstáculos!";
-        scoreEl.classList.add("final");
         gameOver = true;
-        floatingBtn.classList.add("completed");
-      } else {
-        scoreEl.textContent = score + "/10";
+
+        // mostra popup
+        setTimeout(() => {
+          popup.classList.add("active");
+          popup.setAttribute("aria-hidden", "false");
+        }, 400);
       }
     }
 
-    if (obsLeft + 24 < 0) { 
+    if (obsLeft + 24 < 0) {
       obstacle.remove();
       clearInterval(obsInterval);
     }
@@ -85,7 +94,7 @@ function createObstacle() {
   setTimeout(createObstacle, delay);
 }
 
-
+// botão "tentar novamente"
 retryBtn.addEventListener("click", () => {
   score = 0;
   gameOver = false;
@@ -99,9 +108,9 @@ retryBtn.addEventListener("click", () => {
   createObstacle();
 });
 
-
-floatingBtn.addEventListener("click", () => {
-  if (floatingBtn.classList.contains("completed")) {
-    window.location.href = "final.html"; 
-  }
+// botão da popup
+nextBtn.addEventListener("click", () => {
+  popup.classList.remove("active");
+  popup.setAttribute("aria-hidden", "true");
+  window.location.href = "final.html";
 });

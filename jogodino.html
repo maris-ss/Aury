@@ -1,48 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aury</title>
     <link rel="stylesheet" href="./css/dino.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prata&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-    
+  <body>
     <section id="intro" class="section intro-section">
-        <div class="content-wrapper">
-            <h1>Arco da resistência</h1>
-            <p>
-                Ao longo da história, a humanidade foi colocada à prova diante de guerras, crises e desastres que
-                pareciam insuperáveis. Ainda assim, seguimos em frente, resistindo e nos reinventando a cada queda.
-            </p>
-            <p>
-                Neste arco, você enfrentará sua própria provação: superar os obstáculos que a vida põe em seu caminho.
-            </p>
+      <div class="content-wrapper">
+        <h1>Arco da resistência</h1>
+        <p>
+          Ao longo da história, a humanidade foi colocada à prova diante de
+          guerras, crises e desastres que pareciam insuperáveis. Ainda assim,
+          seguimos em frente, resistindo e nos reinventando a cada queda.
+        </p>
+        <p>
+          Neste arco, você enfrentará sua própria provação: superar os
+          obstáculos que a vida põe em seu caminho.
+        </p>
 
-            <img id="scroll-down" class="arrow-image" src="./image/arrow.png" alt="Seta para baixo" />
-        </div>
+        <img
+          id="scroll-down"
+          class="arrow-image"
+          src="./image/arrow.png"
+          alt="Seta para baixo"
+        />
+      </div>
     </section>
 
     <section>
-        <div class="game-container">
-            <div class="score">0/10</div>
-            <div class="game">
-                <div class="player"></div>
-                <button class="retry-btn" style="display:none;">Tentar novamente</button>
-            </div>
+      <div class="game-container">
+        <div class="score">0/10</div>
+        <div class="game">
+          <div class="player"></div>
+          <button class="retry-btn" style="display: none">
+            Tentar novamente
+          </button>
         </div>
+      </div>
 
-        <div class="align-btn">
-            <button id="restart-btn" class="floating-btn" aria-hidden="true">→</button>
-        </div>
 
+      <div id="congrats-popup" class="popup-overlay" aria-hidden="true">
+      <div class="popup-content">
+        <h2>Parabéns!</h2>
+        <p>Você superou todos os obstáculos!</p>
+        <button id="next-game-btn">Continuar</button>
+      </div>
+    </div>
     </section>
 
-    <script src="./js/dino.js"></script>
-</body>
+   
 
+    <script src="./js/dino.js"></script>
+  </body>
 </html>

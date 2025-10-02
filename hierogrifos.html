@@ -1,35 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aury</title>
   <link rel="stylesheet" href="./css/hierogrifos.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  
   <section id="intro" class="section intro-section">
     <div class="content-wrapper">
       <h1>Arco da inovação positiva</h1>
       <p>
-        Ao longo dos anos muitas inovações fizeram a diferença. Como a Pedra
-        de Roseta que foi fundamental para que os estudiosos pudessem entender
-        a escrita egípcia antiga.
+        Ao longo dos anos muitas inovações fizeram a diferença. Como a Pedra de Roseta que foi fundamental para que os estudiosos pudessem entender a escrita egípcia antiga.
       </p>
       <h1>Sua missão</h1>
       <p>
-        Traduza um pedaço de hierógrifo como os estudiosos que traduziram as
-        escritas da pedra
+        Traduza um pedaço de hieróglifo como os estudiosos que traduziram as escritas da pedra
       </p>
 
       <img id="scroll-down" class="arrow-image" src="./image/arrow.png" alt="Seta para baixo" />
     </div>
   </section>
-  <section>
+
+  <section class="game-section">
     <div class="guia">
       <img src="./image/guia.png" alt="Tabela de hieróglifos" />
     </div>
@@ -42,13 +36,18 @@
       <label for="answer">Digite aqui sua resposta:</label><br />
       <input id="answer" type="text"/>
     </div>
-    <div class="align-btn">
-      <button id="restart-btn" class="floating-btn" aria-hidden="true">→</button>
-    </div>
-
   </section>
 
+  <!-- Popup de conclusão -->
+  <div id="congrats-popup" class="popup-overlay" aria-hidden="true">
+    <div class="popup-content">
+      <h2>Parabéns!</h2>
+      <p>Você traduziu os hierógrifos!</p>
+      <button id="next-game-btn">Próximo jogo</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="./js/hierogrifos.js"></script>
 </body>
-
 </html>

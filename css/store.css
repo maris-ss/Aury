@@ -178,7 +178,8 @@ nav a {
   box-shadow: inset 10px 7px 34px 1px rgba(29, 17, 140, 0.25);
   padding: 40px;
   height: 130vh;
-  border: 1px solid #fff;
+  /* border: 1px solid #fff; */
+  /* margin-bottom: 3rem; */
 }
 
 /* Grid */
@@ -188,7 +189,7 @@ nav a {
   grid-template-rows: repeat(4, 10.5rem);
   gap: 20px 12px; /* vertical maior que horizontal */
   height: 100%;
-  border: 1px solid #e61d1d;
+  /* border: 1px solid #e61d1d; */
 }
 
 .grid-item {

@@ -27,18 +27,22 @@
     </div>
   </section>
 
-
   <section id="game-section" class="section game-section">
     <div class="outer-div">
       <div class="inner-div">
         <div id="puzzle-grid" class="puzzle-grid"></div>
       </div>
     </div>
-
-    <div class="align-btn">
-      <button id="restart-btn" class="floating-btn">→</button>
-    </div>
   </section>
+
+  <!-- Popup de conclusão -->
+  <div id="congrats-popup" class="popup-overlay" aria-hidden="true">
+    <div class="popup-content">
+      <h2>Parabéns!</h2>
+      <p>Você recuperou o quadro quebrado!</p>
+      <button id="next-game-btn">Próximo jogo</button>
+    </div>
+  </div>
   
   <script src="./js/puzzle.js"></script>
 

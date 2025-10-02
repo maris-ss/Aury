@@ -1,21 +1,39 @@
 const gameArea = document.querySelector(".game-area");
 
+// 🔹 Deixa os cards invisíveis até o scroll
+document.querySelectorAll(".card").forEach((card) => {
+  card.style.opacity = "0";
+  card.style.transform = "translateY(50px) scale(0.8)";
+});
+
 const observer = new IntersectionObserver(
-  (entries) => {
+  (entries, obs) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
+
+        // animação GSAP só 1x
+        gsap.to(".card", {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.6,
+          ease: "back.out(1.7)",
+          stagger: 0.15,
+        });
+
+        // para de observar depois da primeira vez
+        obs.unobserve(entry.target);
       }
     });
   },
-  { threshold: 0.3 } 
+  { threshold: 0.3 }
 );
 
 observer.observe(gameArea);
 
 const SHOW_MILLIS = 600;
 const gridEl = document.getElementById("grid");
-const restartFloatingBtn = document.getElementById("restart-btn");
 
 let flipped = [];
 let lockBoard = false;
@@ -43,8 +61,10 @@ function onCardClick(card) {
 
       if (matches === totalPairs) {
         setTimeout(() => {
-          restartFloatingBtn.classList.add("completed"); // fica roxo
-          restartFloatingBtn.setAttribute("aria-hidden", "false");
+          // Mostrar popup de parabéns
+          const popup = document.getElementById("congrats-popup");
+          popup.classList.add("active");
+          popup.setAttribute("aria-hidden", "false");
         }, 200);
       }
     } else {
@@ -71,9 +91,14 @@ function addCardEvents() {
   });
 }
 
-restartFloatingBtn.addEventListener("click", () => {
-  if (!restartFloatingBtn.classList.contains("completed")) return;
-  window.location.href = "hierogrifos.html"; 
-});
-
 addCardEvents();
+
+// Botão da popup
+document.getElementById("next-game-btn").addEventListener("click", () => {
+  const popup = document.getElementById("congrats-popup");
+  popup.classList.remove("active");
+  popup.setAttribute("aria-hidden", "true");
+
+  // redireciona para o próximo jogo
+  window.location.href = "hierogrifos.html";
+});

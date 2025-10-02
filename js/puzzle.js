@@ -8,7 +8,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.3 } 
+  { threshold: 0.3 }
 );
 
 observer.observe(gameSection);
@@ -29,7 +29,10 @@ const imageFiles = [
 ];
 
 const puzzleGrid = document.getElementById("puzzle-grid");
-const restartBtn = document.getElementById("restart-btn");
+
+// popup
+const popup = document.getElementById("congrats-popup");
+const nextBtn = document.getElementById("next-game-btn");
 
 let pieces = [];
 let draggingElement = null;
@@ -72,12 +75,13 @@ const checkWin = () => {
   );
 
   if (isComplete) {
-    restartBtn.classList.add("completed"); 
-  } else {
-    restartBtn.classList.remove("completed"); 
+    // mostra popup ao vencer
+    setTimeout(() => {
+      popup.classList.add("active");
+      popup.setAttribute("aria-hidden", "false");
+    }, 300);
   }
 };
-
 
 puzzleGrid.addEventListener("dragstart", (e) => {
   if (e.target.classList.contains("puzzle-piece")) {
@@ -87,7 +91,7 @@ puzzleGrid.addEventListener("dragstart", (e) => {
 });
 
 puzzleGrid.addEventListener("dragover", (e) => {
-  e.preventDefault(); 
+  e.preventDefault();
 });
 
 puzzleGrid.addEventListener("drop", (e) => {
@@ -109,11 +113,10 @@ puzzleGrid.addEventListener("drop", (e) => {
   draggingElement = null;
 });
 
-restartBtn.addEventListener("click", () => {
-  if (!restartBtn.classList.contains("completed")) return; 
-
-  
-  window.location.href = "jogomemory.html"; 
+nextBtn.addEventListener("click", () => {
+  popup.classList.remove("active");
+  popup.setAttribute("aria-hidden", "true");
+  window.location.href = "jogomemory.html";
 });
 
 window.onload = () => {

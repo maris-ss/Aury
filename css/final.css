@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* --- Fontes --- */
 @font-face {
     font-family: "Pecita";
     src: url("../fonts/Pecita.woff2") format("woff2"),
@@ -12,111 +13,263 @@
     font-style: normal;
 }
 
+/* --- Body e Background --- */
 body {
+    /* Centraliza o conteúdo principal na tela */
     display: grid;
     place-items: center;
+    
+    /* Fundo gradiente */
     background: linear-gradient(to bottom right, #cac0ff, #8481d8);
     min-height: 100vh;
     color: white;
     font-family: "Pecita", sans-serif;
+    position: relative; /* Garante que elementos fixos se comportem bem */
 }
 
 body::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
-
-.section {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.out-box {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.box {
-  width: 80%;
-  height: 90%;
-  background-color: rgba(155, 150, 229, 0.25); 
-  border-radius: 0;
-  box-shadow: 10px 7px 34px 1px rgba(29, 17, 140, 0.25) inset;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.text {
-    width: 80%;
+/* O elemento <section> (ou a classe .section) precisa ocupar toda a tela para centralizar corretamente */
+section {
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    text-align: center;
 }
 
+/* --- Container Principal (out-box) --- */
+.out-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Adicionado padding para evitar que o conteúdo encoste nas bordas da tela */
+    padding: 20px; 
+}
+
+/* --- Card de Conteúdo (box) --- */
+.box {
+    /* Replicando o 'card' do React Native: width '90%' e borderRadius '25' */
+    width: 90%; 
+    max-width: 500px; /* Limita o tamanho em telas grandes */
+    
+    /* Estilos do card transparente */
+    background-color: rgba(255, 255, 255, 0.25); /* Corrigido para a cor do RN */
+    border-radius: 25px; /* Corrigido para o valor do RN */
+    box-shadow: none; /* Removido box-shadow interno, geralmente não usado assim */
+
+    /* Centraliza o conteúdo interno (texto e botão) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    /* Padding Vertical baseado no React Native (40px vertical) */
+    padding: 40px 30px;
+    
+    /* Garante que o conteúdo apareça por cima das decorações de fundo, mas abaixo do glitch */
+    z-index: 20; 
+}
+
+/* --- Estilos do Texto --- */
+.text {
+    width: 100%; /* Ocupa a largura total do .box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* O padding foi movido para o .box */
+}
 
 h1 {
-    font-size: 3.5rem;
-    color: #72678d;
+    /* Baseado em styles.title (Pecita, 48px, #fff) */
+    font-family: 'Pecita', sans-serif; 
+    font-size: 48px; 
+    color: #fff; /* Corrigido para branco */
+    text-align: center;
+    margin-bottom: 20px;
     z-index: 1;
 }
 
 p {
-    font-size: 1.3rem;
-    margin: 1.5rem 0;
+    /* Baseado em styles.subtitle (Pecita, 20px, #F0EAF9, lineHeight 28) */
+    font-family: 'Pecita', sans-serif; /* Corrigido para Pecita */
+    font-size: 20px; /* Corrigido para 20px */
+    line-height: 28px; /* Corrigido para 28px */
+    color: #F0EAF9; /* Cor próxima ao F0EAF9 */
+
+    margin: 15px 0; /* Ajuste o margin */
     z-index: 1;
     text-align: center;
+    font-weight: normal; /* Pecita é geralmente normal */
+}
+
+/* --- Botão Finalizar --- */
+.align-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Garante um espaço decente entre o texto e o botão */
+    margin-top: 30px; 
+}
+
+.floating-btn {
+    /* Estilização original do seu botão */
+    background-color: #72678d;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 60px;
+    font-size: 1rem;
     color: #fff;
-    font-weight: 400;
-      font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Josefin Sans', sans-serif;
+    /* Removido margin-bottom para não afetar o alinhamento central */
+    margin-bottom: 0 !important; 
+    
+    /* Garante que o botão fique acima das decorações e linhas de glitch */
+    z-index: 35; 
 }
 
-p .highlight {
-    color: #72678d;
+.floating-btn:hover {
+    background-color: #8481d8;
 }
 
 
+/* --- Estilos de Fundo e Decorações (Mantidos) --- */
 .bg-top {
-  position: fixed;
-  width: 50rem;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -1; 
+    position: fixed;
+    width: 50rem;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1; 
 }
 
 .bg-bottom {
-  position: fixed;
-  width: 50rem;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -1; 
+    position: fixed;
+    width: 50rem;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1; 
 }
 
-
 .decor-top-right {
-  position: fixed;
-  width: 28rem;
-  top: 0;
-  right: 0;
-  z-index: 10; 
+    position: fixed;
+    width: 28rem;
+    top: 0;
+    right: 0;
+    z-index: 10; 
 }
 
 .decor-bottom-left {
-  position: fixed;
-  width: 22rem;
-  bottom: 0;
-  left: 0;
-  z-index: 10; 
+    position: fixed;
+    width: 22rem;
+    bottom: 0;
+    left: 0;
+    z-index: 10; 
+}
+
+/*
+ * --- GLITCH ANIMATION STYLES (Adicionado do código anterior) ---
+ * Estes são essenciais para a animação JS que você pretende usar.
+ */
+
+.glitch-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Para sobrepor tudo */
+    top: 0;
+    left: 0;
+}
+
+.content-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.glitch-stage-1-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    /* ⚡️ CORREÇÃO CRUCIAL: Permite que o clique passe pelos textos */
+    pointer-events: none; 
+}
+.hidden {
+    display: none !important;
+}
+
+/* Estilos dos Textos de Segurança/Chat (Glitch Stage 1) */
+.text-box {
+    position: absolute;
+    border-radius: 15px;
+    padding: 15px;
+    z-index: 30;
+}
+
+.text-box-dark {
+    background-color: #3C305E;
+}
+
+.text-box-light {
+    background-color: #8A63D2;
+}
+
+.chat-text {
+    font-family: 'Prata', sans-serif;
+    color: #fff;
+    font-size: 16px;
+}
+
+.security-text-small {
+    font-family: monospace;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+    white-space: pre-line;
+}
+
+/* Linhas de Glitch */
+.glitch-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.0;
+    z-index: 25; 
+    transition: opacity 0.1s;
+    /* ⚡️ CORREÇÃO CRUCIAL: Permite que o clique passe por esta imagem */
+    pointer-events: none; 
+}
+
+.glitch-active {
+    opacity: 0.4;
+}
+
+/* Animação de Shake (opcional) */
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.glitch-shake {
+    animation: shake 0.1s infinite;
 }

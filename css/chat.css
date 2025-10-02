@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuração do Background (Ajuste o caminho e a imagem conforme sua estrutura) */
+.background-container {
+    background-image: url('../image/ChatScreen.webp'); /* Adapte o caminho */
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.safe-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: env(safe-area-inset-top, 20px); /* Para simular o SafeAreaView */
+}
+
+/* Estilos do Header */
+.header {
+    padding: 15px;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.header-subtitle {
+    font-family: 'Prata', sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilos do Chat */
+.chat-container {
+    flex: 1;
+    overflow-y: auto; /* Para a rolagem do chat */
+    padding: 15px;
+}
+
+.chat-content {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+/* Estilos das Bolhas de Mensagem */
+.bubble {
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 10px;
+    max-width: 80%;
+    font-family: 'Prata', sans-serif;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+.ai-bubble {
+    background-color: #3C305E; /* Baseado em styles.aiBubble */
+    align-self: flex-start;
+    margin-right: auto;
+    border-top-left-radius: 5px;
+}
+
+.user-bubble {
+    background-color: #8A63D2; /* Baseado em styles.userBubble */
+    align-self: flex-end;
+    margin-left: auto;
+    border-top-right-radius: 5px;
+}
+
+/* Estilos do Input/Opções */
+.input-container {
+    padding: 15px;
+    padding-bottom: 75px; /* Simula padding inferior em mobile */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.option-button {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.option-button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.option-text {
+    font-family: 'Prata', sans-serif;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Estilo para o botão "Próximo" ao final do chat */
+.next-button {
+    background-color: #72678d; /* Cor destacada, ajuste se necessário */
+}
+
+.next-button:hover {
+    background-color: #8481d8;
+}

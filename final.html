@@ -13,13 +13,15 @@
 <body>
     <img src="./image/gradientiirtop.png" alt="Topo fundo" class="bg-top">
     <img src="./image/gradientiibottom.png" alt="Bottom fundo" class="bg-bottom">
-
     <img src="./image/finaldecorationtop.png" alt="Decoração topo direita" class="decor-top-right">
     <img src="./image/finaldecorationbottom.png" alt="Decoração bottom esquerda" class="decor-bottom-left">
 
     <section>
         <div class="out-box">
-            <div class="box">
+
+            <img id="glitch-lines" src="./image/glitchLines.webp" alt="Linhas Glitch" class="glitch-lines">
+
+            <div id="card-parabens" class="box">
                 <div class="text">
                     <h1>Parabéns!</h1>
                     <p>Você superou os desafios e provou aquilo que nenhuma inteligência artificial pode contestar: a
@@ -29,10 +31,41 @@
                         memória e essência.</p>
                     <p>O que nos torna humanos jamais poderá ser substituído.</p>
                 </div>
+                
+                <div class="align-btn">
+                    <button id="finalize-button" class="floating-btn">Finalizar</button>
+                </div>
             </div>
+
+            <div id="glitch-stage-1-content" class="glitch-stage-1-content hidden">
+                <div class="text-box text-box-light" style="top: 10%; left: 5%; width: 60%;">
+                    <span class="security-text-small">
+                        0xA1CC355<br>AUTHORIZED INTERFACE<br>Breach Layer 03 ... FAIL<br>Quantum-Locked...
+                    </span>
+                </div>
+                <div class="text-box text-box-dark" style="top: 18%; right: 10%; width: 45%;">
+                    <span class="chat-text">O que você quer?</span>
+                </div>
+                <div class="text-box text-box-dark" style="top: 32%; left: 10%; width: 55%;">
+                    <span class="chat-text">Exterminação iniciada.</span>
+                </div>
+                <div class="text-box text-box-light" style="top: 50%; left: 50%; transform: translateX(-50%); width: 60%;">
+                    <span class="chat-text">Humano detectado!!!!!!!</span>
+                </div>
+                <div class="text-box text-box-dark" style="bottom: 5%; right: 5%; width: 65%;">
+                    <span class="security-text-small">
+                        SECURITY ERROR: 0x5EC-LUCK<br>>> Intrusion Detected...<br>> System lockdown initiated...
+                    </span>
+                </div>
+            </div>
+            
         </div>
     </section>
-   
+    
+
+
+
+    <script src="./js/final.js"></script>
 </body>
 
 </html>
