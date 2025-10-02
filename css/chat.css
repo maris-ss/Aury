@@ -4,36 +4,57 @@
     box-sizing: border-box;
 }
 
-/* Configuração do Background (Ajuste o caminho e a imagem conforme sua estrutura) */
+/* Configuração do Background e Centralização */
 .background-container {
-    background-image: url('../image/ChatScreen.webp'); /* Adapte o caminho */
+    background-image: url('../image/ChatScreen.webp');
     background-size: cover;
     background-position: center;
     width: 100vw;
     min-height: 100vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+/* ⚡️ O CHATBOX CENTRALIZADO (CAIXA ROXA) ⚡️ */
+.main-chat-box {
+    background-color: #A8A6DA; 
+    width: 90%; 
+    max-width: 60rem; 
+    height: 90vh; 
+    max-height: 800px; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+    
+    /* Layout Flexbox vertical para fixar header/input e rolar o chat */
     display: flex;
     flex-direction: column;
+    overflow: hidden; 
 }
 
 .safe-area {
-    flex: 1;
+    flex: 1; 
     display: flex;
     flex-direction: column;
-    padding-top: env(safe-area-inset-top, 20px); /* Para simular o SafeAreaView */
 }
 
-/* Estilos do Header */
+/* --- Header: Fixo no Topo --- */
 .header {
+    background-color: #A8A6DA; 
+    z-index: 10;
+    
     padding: 15px;
     padding-top: 40px;
     padding-bottom: 10px;
     align-items: center;
     text-align: center;
+    /* Impede que o header encolha */
+    flex-shrink: 0; 
 }
 
 .header-subtitle {
-    font-family: 'Prata', sans-serif;
-    font-size: 14px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
     color: rgba(255, 255, 255, 0.7);
     margin-top: 5px;
     max-width: 85%;
@@ -41,51 +62,79 @@
     margin-right: auto;
 }
 
-/* Estilos do Chat */
+/* --- Área de Mensagens: ROLA AQUI --- */
 .chat-container {
-    flex: 1;
-    overflow-y: auto; /* Para a rolagem do chat */
+    flex: 1; 
+    overflow-y: auto; 
     padding: 15px;
+    min-height: 0; /* Ajuda o Flexbox */
+}
+
+.chat-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background-color: #8A63D2;
+    border-radius: 10px;
 }
 
 .chat-content {
-    display: flex;
-    flex-direction: column;
+    display: block; 
     padding-bottom: 20px;
+    width: 100%;
 }
 
-/* Estilos das Bolhas de Mensagem */
 .bubble {
     border-radius: 20px;
-    padding: 15px;
+    padding: 8px;
     margin-bottom: 10px;
     max-width: 80%;
-    font-family: 'Prata', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     color: #fff;
     font-size: 16px;
-    line-height: 1.35;
+    line-height: 1.2;
 }
 
 .ai-bubble {
-    background-color: #3C305E; /* Baseado em styles.aiBubble */
+    background-color: #3C305E; 
     align-self: flex-start;
     margin-right: auto;
-    border-top-left-radius: 5px;
+    border-top-left-radius: 5px; 
 }
 
 .user-bubble {
-    background-color: #8A63D2; /* Baseado em styles.userBubble */
+    background-color: #8A63D2; 
     align-self: flex-end;
     margin-left: auto;
-    border-top-right-radius: 5px;
+    border-top-right-radius: 5px; 
 }
 
-/* Estilos do Input/Opções */
-.input-container {
+/* --- Área de Mensagens: ROLA AQUI --- */
+.chat-container {
+    flex: 1; 
+    overflow-y: auto; 
     padding: 15px;
-    padding-bottom: 75px; /* Simula padding inferior em mobile */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: 0; 
 }
+
+/* --- Área de Input/Opções: Fixa no Rodapé --- */
+.input-container {
+    background-color: #A8A6DA; 
+    z-index: 10;
+    padding: 15px;
+    padding-bottom: 30px; 
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* Fixar no fim da main-chat-box */
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
 
 .option-button {
     background-color: rgba(255, 255, 255, 0.15);
@@ -104,14 +153,17 @@
 }
 
 .option-text {
-    font-family: 'Prata', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     color: #fff;
     font-size: 16px;
 }
 
-/* Estilo para o botão "Próximo" ao final do chat */
 .next-button {
-    background-color: #72678d; /* Cor destacada, ajuste se necessário */
+    background-color: #72678d; 
+    border-radius: 60px;
+    width: 150px;   /* só o "Próximo" fica menor */
+    margin: 0 auto; 
+    align-self: center;
 }
 
 .next-button:hover {

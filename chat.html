@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4ur%</title>
+    <link rel="stylesheet" href="./css/chat.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat IA</title>
-    <link rel="stylesheet" href="./css/chat.css">
-    <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
-</head>
-
-<body>
+  <body>
     <div class="background-container">
-        <div class="safe-area">
-            <header class="header">
-                <p class="header-subtitle">
-                    Parece que a IA invadiu nosso sistema, é hora de ver se conseguimos convencer ela. Pergunte algo a ela.
-                </p>
-            </header>
-
-            <div id="chat-container" class="chat-container">
-                <div id="chat-content" class="chat-content">
-                    </div>
-            </div>
-
-            <div id="input-container" class="input-container">
-                </div>
+      <div class="main-chat-box"> 
+        <div class="safe-area">  
+          <header class="header">
+            <p class="header-subtitle">
+              Parece que a IA invadiu nosso sistema, é hora de ver se conseguimos convencer ela. Pergunte algo a ela.</p>        
+          </header>      
+          <div id="chat-container" class="chat-container">          
+            <div id="chat-content" class="chat-content">           
+            </div>           
+          </div>       
+          <div id="input-container" class="input-container">           
+          </div>       
         </div>
+      </div>    
     </div>
-
+    
     <script src="./js/chatData.js"></script>
-    <script src="./js/chat.js"></script>
-</body>
-
+    <script src="./js/chat.js" type="module"></script>
+  </body>
 </html>

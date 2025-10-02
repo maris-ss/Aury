@@ -23,7 +23,7 @@ body {
     background: linear-gradient(to bottom right, #cac0ff, #8481d8);
     min-height: 100vh;
     color: white;
-    font-family: "Pecita", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     position: relative; /* Garante que elementos fixos se comportem bem */
 }
 
@@ -55,16 +55,11 @@ section {
 
 /* --- Card de Conteúdo (box) --- */
 .box {
-    /* Replicando o 'card' do React Native: width '90%' e borderRadius '25' */
     width: 90%; 
-    max-width: 500px; /* Limita o tamanho em telas grandes */
-    
-    /* Estilos do card transparente */
-    background-color: rgba(255, 255, 255, 0.25); /* Corrigido para a cor do RN */
-    border-radius: 25px; /* Corrigido para o valor do RN */
-    box-shadow: none; /* Removido box-shadow interno, geralmente não usado assim */
-
-    /* Centraliza o conteúdo interno (texto e botão) */
+    max-width: 56rem; 
+    background-color: rgba(155, 150, 229, 0.25);
+    border-radius: 0;
+    box-shadow: 10px 7px 34px 1px rgba(29, 17, 140, 0.25) inset;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,7 +69,7 @@ section {
     padding: 40px 30px;
     
     /* Garante que o conteúdo apareça por cima das decorações de fundo, mas abaixo do glitch */
-    z-index: 20; 
+    z-index: 0; 
 }
 
 /* --- Estilos do Texto --- */
@@ -99,7 +94,7 @@ h1 {
 
 p {
     /* Baseado em styles.subtitle (Pecita, 20px, #F0EAF9, lineHeight 28) */
-    font-family: 'Pecita', sans-serif; /* Corrigido para Pecita */
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 20px; /* Corrigido para 20px */
     line-height: 28px; /* Corrigido para 28px */
     color: #F0EAF9; /* Cor próxima ao F0EAF9 */
@@ -226,15 +221,24 @@ p {
 }
 
 .text-box-dark {
-    background-color: #3C305E;
+    background-color: #30183F;
 }
 
 .text-box-light {
+    background-color: #9D9BDA;
+}
+
+.text-box-medium {
     background-color: #8A63D2;
 }
 
+.text-box-white {
+    background-color: #CCCCD8;
+    color: #30183F !important;
+}
+
 .chat-text {
-    font-family: 'Prata', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     color: #fff;
     font-size: 16px;
 }

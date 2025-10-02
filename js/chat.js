@@ -7,16 +7,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputContainer = document.getElementById("input-container");
   const CHAT_END_REDIRECT_URL = "final-final.html"; // Altere para a sua próxima tela
 
-  let currentInteractionId = "initial"; // Começa com o estado 'initial'
-  let isChatFinished = false;
+  let currentInteractionId = "initial";
+  let isChatFinished = false; // 🟢 FUNÇÃO SCROLLTOBOTTOM ATUALIZADA 🟢
 
-  // Função para rolar o chat para o final
   const scrollToBottom = () => {
     const chatContainer = document.getElementById("chat-container");
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+
+    // ⚡️ Usamos o método .scrollTo() para garantir que a rolagem funcione
+    // e adicionamos 'smooth' para uma transição suave.
+    chatContainer.scrollTo({
+      top: chatContainer.scrollHeight,
+      behavior: "smooth",
+    });
   };
 
-  // Função para criar uma bolha de mensagem
   const createMessageBubble = (text, from) => {
     const bubble = document.createElement("div");
     bubble.classList.add("bubble");
@@ -25,32 +29,27 @@ document.addEventListener("DOMContentLoaded", () => {
     chatContent.appendChild(bubble);
   };
 
-  // Função principal para manipular a seleção de uma opção
   const handleOptionPress = (option) => {
-    // 1. Limpa as opções atuais (assim como no React Native)
-    inputContainer.innerHTML = "";
+    // 1. Limpa as opções atuais
+    inputContainer.innerHTML = ""; // 2. Adiciona a mensagem do usuário
 
-    // 2. Adiciona a mensagem do usuário
     createMessageBubble(option.text, "user");
-    scrollToBottom();
+    scrollToBottom(); // 3. Obtém a próxima interação e adiciona a resposta da IA
 
-    // 3. Obtém a próxima interação e adiciona a resposta da IA
     const nextInteraction = chatData[option.nextId];
 
     if (nextInteraction) {
       // Simula o delay de resposta da IA (1200ms)
       setTimeout(() => {
         createMessageBubble(nextInteraction.aiResponse, "ai");
-        currentInteractionId = option.nextId;
+        currentInteractionId = option.nextId; // 4. Renderiza as próximas opções ou o botão 'Próximo'
 
-        // 4. Renderiza as próximas opções ou o botão 'Próximo'
         renderOptions(nextInteraction.userOptions);
         scrollToBottom();
       }, 1200);
     }
   };
 
-  // Função para renderizar as opções
   const renderOptions = (options) => {
     inputContainer.innerHTML = ""; // Limpa as opções anteriores
 
@@ -76,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Inicia o chat com a primeira mensagem da IA e as opções iniciais
   const startChat = () => {
     const initialData = chatData.initial;
     createMessageBubble(initialData.aiResponse, "ai");
