@@ -182,7 +182,7 @@ section {
 }
 
 .popup-content button {
-  background-color: #72678D;
+  background-color: #7e76c5;
   border: none;
   padding: 10px 20px;
   border-radius: 50px;
@@ -243,27 +243,23 @@ section {
   color: #fff;
 }
 
-.decor-top-right {
+.decor-top-right,
+.decor-bottom-left {
   position: absolute;
-  width: 5rem;
-  
-  top: 0rem;
-  left: 0;
+  height: 100%;
+  width: auto; /* Mantém a proporção */
+  object-fit: contain; /* Garante que não distorça */
   z-index: 10;
-  /* filter: drop-shadow(0 0 10px #A7DEED)
-          drop-shadow(0 0 30px #A7DEED)
-          drop-shadow(0 0 60px #A7DEED); */
-  /* animation: piscarNeon2 1.5s infinite alternate; */
+  pointer-events: none; /* Evita bloquear cliques no botão */
+}
+
+/* Ajuste de posição individual */
+.decor-top-right {
+  top: 0;
+  left: 0;
 }
 
 .decor-bottom-left {
-  position: absolute;
-  width: 4.4rem;
   top: 0;
   right: 0;
-  z-index: 10; 
-  /* filter: drop-shadow(0 0 10px #7a5ace)
-          drop-shadow(0 0 30px #7a5ace)
-          drop-shadow(0 0 60px #7a5ace); */
-  /* animation: piscarNeon 1.5s infinite alternate; */
 }

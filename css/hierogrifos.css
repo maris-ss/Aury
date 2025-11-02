@@ -155,7 +155,7 @@ body::-webkit-scrollbar {
 }
 
 .popup-content button {
-  background-color: #72678D;
+  background-color: #90ACD7;
   border: none;
   padding: 10px 20px;
   border-radius: 50px;
@@ -237,4 +237,26 @@ body::-webkit-scrollbar {
 
 .nav-links a:hover {
   color: #fff;
+}
+
+
+.decor-top-right,
+.decor-bottom-left {
+  position: absolute;
+  height: 100%;
+  width: auto; /* Mantém a proporção */
+  object-fit: contain; /* Garante que não distorça */
+  z-index: 10;
+  pointer-events: none; /* Evita bloquear cliques no botão */
+}
+
+/* Ajuste de posição individual */
+.decor-top-right {
+  top: 0;
+  left: 0;
+}
+
+.decor-bottom-left {
+  top: 0;
+  right: 0;
 }

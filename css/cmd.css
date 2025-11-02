@@ -351,3 +351,15 @@ body.transitioning .glitch-overlay {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+
+.botao-inicial {
+    width: 150px;
+    cursor: pointer;
+    background-color: var(--bg-color);
+    outline: none;
+    box-shadow: none;
+    /* all: unset; */
+      border: none;
+
+}
