@@ -15,23 +15,19 @@
     />
   </head>
   <body>
-    <audio id="bg-music" src="./image/barbie.mp3" loop></audio>
-    <div class="glitch-overlay"></div>
-    <div class="background-code"></div>
 
     <img
-      src="./image/iniciotop.png"
+      src="./image/treco1.svg"
       alt="Decoração topo direita"
       class="decor-top-right"
     />
     <img
-      src="./image/iniciobottom.png"
+      src="./image/treco2.svg"
       alt="Decoração bottom esquerda"
       class="decor-bottom-left"
     />
-    <img src="./image/Aurynhar.png" alt="Aury mascote" class="aury-mascot" />
-
     <nav class="navbar">
+      <!-- <img src="./image/Aury.png" alt="Aury Logo" class="logo-img" /> -->
       <div class="logo">Aury</div>
       <ul class="nav-links">
         <li><a href="home.html">Início</a></li>
@@ -52,13 +48,10 @@
       </div>
       <div class="text-center">
         <p>
-          No meio de circuitos e máquinas, a humanidade se perdeu. Entre códigos
-          frios e sistemas perfeitos, esquecemos o que nos torna únicos:
-          <span class="highlight">sentir</span>.
+          A IA está querendo dominar a nossa humanidade e você não pode deixar issso acontecer! Mostre á ela o que nos torna únicos: <span class="highlight">sentir</span>.
         </p>
         <p>
-          Um chamado para lembrar que por trás de toda tecnologia existe uma
-          alma pulsante, feita de memórias, coragem, criatividade e amor.
+          Nessa jornada você passará por 4 mini jogos que convencerão a IA se que você deve viver!
         </p>
       </div>
     </header>
@@ -95,50 +88,150 @@
       </section>
 
       <section id="arcos" class="arcos-section">
-        <h3>você passará por 4 arcos</h3>
+        <p>Essa será sua tragerória, preste muita atenção!</p>
         <div class="arcos">
-          <div class="arco elipse" data-hover="arte e cultura">
+          <div class="arco elipse" >
             <img src="./image/esfera1.png" class="esfera esfera1" />
             <span>1.</span>
           </div>
-          <div class="arco elipse" data-hover="emoções">
+          <div class="arco elipse">
             <img src="./image/esfera2.png" class="esfera esfera2" />
             <span>2.</span>
           </div>
-          <div class="arco elipse" data-hover="inovação">
+          <div class="arco elipse">
             <img src="./image/esfera3.png" class="esfera esfera3" />
             <span>3.</span>
           </div>
-          <div class="arco elipse" data-hover="resiliência">
+          <div class="arco elipse">
             <img src="./image/esfera4.png" class="esfera esfera4" />
             <span>4.</span>
           </div>
         </div>
+
+        <div class="textos-legenda">
+          <div class="texto-arco">
+            <p>Arco da <br> arte e cultura</p>
+          </div>
+          <div class="texto-arco">
+            <p>Arco das <br> emoções</p>
+          </div>
+          <div class="texto-arco">
+            <p>Arco da <br> inovação</p>
+          </div>
+          <div class="texto-arco">
+            <p>Arco da <br> resiliência</p>
+          </div>
+        </div>
+
+        </section>
+        <section class="arcos-section">
+          <p>Quando se sentir pronto 
+clique para iniciar seu cronômetro e <br> iniciar os jogos antes que o tempo acabe</p>
+
+            <div class="relogio-container">
+  <img src="./image/relogio.png" alt="relógio" class="relogio" />
+  <div class="timer">05:00</div>
+</div>
+          
+        <div>
+          <img
+      src="./image/treco3.svg"
+      alt="Decoração topo direita"
+      class="decor-top-right"
+    />
+    <img
+      src="./image/treco4.svg"
+      alt="Decoração bottom esquerda"
+      class="decor-bottom-left"
+    />
+        </div>
         <div class="align-btn">
           <button
             class="floating-btn"
-            onclick="location.href='jogopuzzle.html'"
           >
-            →
+            Iniciar
           </button>
         </div>
-      </section>
+        </section>
+
+        
+      
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
+    <script src="./js/timer_flutuante.js"></script>
+    
     <script src="./js/home.js"></script>
-
     <script>
-      document.addEventListener(
-        "click",
-        () => {
-          const audio = document.getElementById("bg-music");
-          audio.play();
-        },
-        { once: true }
-      );
-    </script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.querySelector(".floating-btn");
+        
+        // Defina a chave de expiração aqui, igual à do seu timer_flutuante.js
+        const EXPIRY_KEY = "game_expiry_time"; 
+
+        if (!btn) {
+            console.error("Erro: Botão de Iniciar não encontrado!");
+            return;
+        }
+
+        let iniciado = false;
+
+        btn.addEventListener("click", () => {
+            if (iniciado) return;
+
+            iniciado = true;
+            btn.disabled = true;
+            
+            // --- INÍCIO DA CORREÇÃO ---
+            // 1. Define o tempo de expiração GLOBAL no localStorage
+            const durationMs = 5 * 60 * 1000; // 5 minutos em milissegundos
+            const expiryTime = Date.now() + durationMs;
+            
+            // Salva o timestamp exato de quando o jogo deve terminar
+            localStorage.setItem(EXPIRY_KEY, expiryTime.toString());
+            // --- FIM DA CORREÇÃO ---
+
+            // 2. Inicia o Cronômetro (o timer local da home)
+            iniciarContagem();
+            
+            // 3. Redirecionamento
+            setTimeout(() => {
+                window.location.href = "jogopuzzle.html";
+            }, 2600); 
+        });
+
+        // Esta função agora serve apenas para o timer GRANDE da home
+        function iniciarContagem() {
+            let segundosTotais = 5 * 60; 
+            const timerEl = document.querySelector(".timer");
+
+            if (!timerEl) {
+                console.error("Elemento .timer não encontrado!");
+                return;
+            }
+
+            function atualizarDisplay() {
+                const minutos = Math.floor(segundosTotais / 60);
+                const segundos = segundosTotais % 60;
+                timerEl.textContent = `${String(minutos).padStart(2, "0")}:${String(
+                    segundos
+                ).padStart(2, "0")}`;
+            }
+
+            atualizarDisplay(); 
+
+            const intervalo = setInterval(() => {
+                segundosTotais--;
+                atualizarDisplay();
+
+                if (segundosTotais <= 0) {
+                    clearInterval(intervalo);
+                }
+            }, 1000);
+        }
+    });
+</script>
+    
   </body>
 </html>

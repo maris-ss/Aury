@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Digital Numbers';
+  src: url('../fonts/digital-7.ttf') format('truetype');
+}
+
+.floating-relogio-container {
+    position: fixed; /* <--- CORRETO */
+    z-index: 9999;   
+    
+    /* REMOVIDO: top: 20px; (O JS vai cuidar disso) */
+    /* REMOVIDO: right: 20px; (O JS vai cuidar disso) */
+    
+    transform: scale(0.25);
+    transform-origin: top right; 
+    
+    display: none; 
+}
+
+/* --- Estilos da Imagem do Relógio Flutuante --- */
+.relogio-flutuante-img {
+    width: 29rem; /* Mantém o tamanho original para o scale funcionar */
+    margin: 0; /* <--- CORRIGIDO: Remove a margem que quebrava o layout */
+    display: block;
+}
+
+/* --- Estilos do Timer Flutuante --- */
+#floating-timer-display {
+    position: absolute;
+    top: 55%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    
+    /* A fonte agora será carregada por este arquivo */
+    font-family: 'Digital Numbers', sans-serif; 
+    
+    color: #fff;
+    font-size: 9rem; 
+    text-shadow: 0 0 10px #B3B1E5, 0 0 20px #B3B1E5, 0 0 40px #B3B1E5;
+}
+/* Opcional: Estilos do Relógio GRANDE da tela inicial (Se você mantiver ele para decoração) */
+/* Se você removeu o relógio grande, ignore este bloco. */
+.relogio-container {
+    position: relative;
+    display: inline-block;
+}

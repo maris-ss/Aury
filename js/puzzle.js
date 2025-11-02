@@ -14,18 +14,18 @@ const observer = new IntersectionObserver(
 observer.observe(gameSection);
 
 const imageFiles = [
-  "image/puzze1.png",
-  "image/puzze2.png",
-  "image/puzze3.png",
-  "image/puzze4.png",
-  "image/puzze5.png",
-  "image/puzze6.png",
-  "image/puzze7.png",
-  "image/puzze8.png",
-  "image/puzze9.png",
-  "image/puzze10.png",
-  "image/puzze11.png",
-  "image/puzze12.png",
+  "image/Slice1.png",
+  "image/Slice2.png",
+  "image/Slice3.png",
+  "image/Slice4.png",
+  "image/Slice5.png",
+  "image/Slice6.png",
+  "image/Slice7.png",
+  "image/Slice8.png",
+  "image/Slice9.png",
+  "image/Slice10.png",
+  "image/Slice11.png",
+  "image/Slice12.png",
 ];
 
 const puzzleGrid = document.getElementById("puzzle-grid");

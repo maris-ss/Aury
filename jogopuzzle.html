@@ -5,12 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aury</title>
+  <link rel="stylesheet" href="./css/timer_flutuante.css">
   <link rel="stylesheet" href="./css/puzzle.css">
+  
   <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
 </head>
 
 <body>
+
+  <div id="floating-relogio-container" class="floating-relogio-container">
+    <img src="./image/relogio.png" alt="Relógio Flutuante" class="relogio-flutuante-img" />
+    <div id="floating-timer-display" class="floating-timer-display">05:00</div>
+</div>
 
   <nav class="navbar">
       <div class="logo">Aury</div>
@@ -22,15 +30,15 @@
       </ul>
     </nav>
 
+    
+
   <section id="intro" class="section intro-section">
     <div class="content-wrapper">
       <h1>Arco da arte e cultura</h1>
       <p>
-        Algumas das maiores expressões da humanidade se perderam no tempo; quadros destruídos, memórias apagadas,
-        fragmentos esquecidos. </p>
+        O tempo apagou parte da nossa história, quadros destruídos, memórias esquecidas, arte perdida. </p>
       <p>
-        Sua missão é reconstruí-los, peça por peça, resgatando a beleza que sobrevive mesmo diante da perda. A arte é a
-        memória da alma humana, e cada detalhe revelado será uma prova de que ainda somos dignos de existir.
+        Agora é com você: reconstrua o que sobrou de um quadro importante para a história. 
       </p>
 
       <img id="scroll-down" class="arrow-image" src="./image/arrow.png" alt="Seta para baixo">
@@ -47,13 +55,26 @@
 
   <div id="congrats-popup" class="popup-overlay" aria-hidden="true">
     <div class="popup-content">
+      <img
+      src="./image/raio1.png"
+      alt="Decoração topo direita"
+      class="decor-top-right"
+    />
+    <img
+      src="./image/raio2.png"
+      alt="Decoração bottom esquerda"
+      class="decor-bottom-left"
+    />
+
       <h2>Parabéns!</h2>
       <p>Você recuperou o quadro quebrado!</p>
       <button id="next-game-btn">Próximo jogo</button>
+
     </div>
   </div>
   
   <script src="./js/puzzle.js"></script>
+    <script src="./js/timer_flutuante.js"></script>
 
 </body>
 

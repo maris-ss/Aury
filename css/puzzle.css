@@ -242,3 +242,28 @@ section {
 .nav-links a:hover {
   color: #fff;
 }
+
+.decor-top-right {
+  position: absolute;
+  width: 5rem;
+  
+  top: 0rem;
+  left: 0;
+  z-index: 10;
+  /* filter: drop-shadow(0 0 10px #A7DEED)
+          drop-shadow(0 0 30px #A7DEED)
+          drop-shadow(0 0 60px #A7DEED); */
+  /* animation: piscarNeon2 1.5s infinite alternate; */
+}
+
+.decor-bottom-left {
+  position: absolute;
+  width: 4.4rem;
+  top: 0;
+  right: 0;
+  z-index: 10; 
+  /* filter: drop-shadow(0 0 10px #7a5ace)
+          drop-shadow(0 0 30px #7a5ace)
+          drop-shadow(0 0 60px #7a5ace); */
+  /* animation: piscarNeon 1.5s infinite alternate; */
+}

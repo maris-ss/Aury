@@ -21,6 +21,11 @@
     font-style: normal;
 }
 
+@font-face {
+  font-family: 'Digital Numbers';
+  src: url('../fonts/digital-7.ttf') format('truetype');
+}
+
 body {
     display: grid;
     place-items: center;
@@ -276,8 +281,16 @@ section {
         border-width: 0;
     }
 }
+
+
+.logo-img {
+    width: 4rem;
+    height: auto;
+    margin-right: 1rem;
+}
+
 .arcos-section {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -305,21 +318,71 @@ section {
     margin-bottom: 2rem;
 }
 
+/* .decor-top-right {
+  position: absolute;
+  width: 19rem;
+  top: 8rem;
+  right: 0;
+  z-index: 10; 
+} */
+
 .decor-top-right {
   position: absolute;
   width: 19rem;
-  top: 0;
+  top: 8rem;
   right: 0;
-  z-index: 10; 
+  z-index: 10;
+  filter: drop-shadow(0 0 10px #A7DEED)
+          drop-shadow(0 0 30px #A7DEED)
+          drop-shadow(0 0 60px #A7DEED);
+  animation: piscarNeon2 1.5s infinite alternate;
+}
+
+@keyframes piscarNeon {
+  0% {
+    filter: drop-shadow(0 0 10px #CCCCD8)
+            drop-shadow(0 0 30px #CCCCD8)
+            drop-shadow(0 0 60px #CCCCD8);
+  }
+  100% {
+    filter: drop-shadow(0 0 3px #CCCCD8)
+            drop-shadow(0 0 10px #CCCCD8);
+  }
+}
+
+@keyframes piscarNeon2 {
+  0% {
+    filter: drop-shadow(0 0 10px #A7DEED)
+            drop-shadow(0 0 30px #A7DEED)
+            drop-shadow(0 0 60px #A7DEED);
+  }
+  100% {
+    filter: drop-shadow(0 0 3px #A7DEED)
+           drop-shadow(0 0 10px #A7DEED);
+  }
 }
 
 .decor-bottom-left {
   position: absolute;
-  width: 25rem;
-  bottom: -1rem;
+  width: 19rem;
+  bottom: 1rem;
   left: 0;
   z-index: 10; 
+  filter: drop-shadow(0 0 10px #7a5ace)
+          drop-shadow(0 0 30px #7a5ace)
+          drop-shadow(0 0 60px #7a5ace);
+  animation: piscarNeon 1.5s infinite alternate;
 }
+
+
+
+/* .decor-bottom-left {
+  position: absolute;
+  width: 19rem;
+  bottom: 1rem;
+  left: 0;
+  z-index: 10; 
+} */
 
 .aury-mascot {
     position: absolute;
@@ -354,7 +417,7 @@ h3 {
 }
 
 p {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     margin: 1.5rem 0;
     z-index: 1;
     text-align: center;
@@ -373,7 +436,7 @@ p .highlight {
     width: 100%;
     display: flex;
     height: 50%;
-    margin: 2rem 0;
+    margin: .5rem 0;
 }
 
 .arco {
@@ -389,7 +452,7 @@ p .highlight {
 
 
 .arco img {
-    width: 80%;
+    width: 70%;
     transition: 0.8s ease;
 }
 
@@ -404,16 +467,6 @@ p .highlight {
     scale: 1.1;
 }
 
-.arco:hover span {
-    opacity: 0;
-}
-
-.arco:hover::after {
-    content: attr(data-hover);
-    font-size: 2rem;
-    color: #fff;
-    position: absolute;
-}
 
 .align-btn {
     width: 100%;
@@ -422,15 +475,56 @@ p .highlight {
     justify-content: center;
 }
 
+.textos-legenda {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.texto-arco {
+    width: 30%;
+}
+
+.texto-arco p {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: semi-bold;
+    margin-bottom: 0.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.relogio-container {
+  position: relative;
+  display: inline-block;
+}
+
+.relogio {
+  width: 29rem;
+  margin: 3rem 0;
+  display: block;
+}
+
+.timer {
+  position: absolute;
+  top: 55%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  font-family: 'Digital Numbers', sans-serif;
+  color: #fff;
+  font-size: 9rem;
+  text-shadow: 0 0 10px #B3B1E5, 0 0 20px #B3B1E5, 0 0 40px #B3B1E5;
+}
 
 .floating-btn {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+    width: 120px;
+    height: 40px;
+    border-radius: 50px;
     background-color: #72678d;
-    font-family: "Pecita", sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     color: white;
-    font-size: 28px;
+    font-size: 1.2rem;
     border: none;
     cursor: pointer;
     display: flex;

@@ -170,3 +170,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   arcos.forEach(arco => observer.observe(arco));
 });
+

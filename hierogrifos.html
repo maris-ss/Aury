@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aury</title>
-  <link rel="stylesheet" href="./css/hierogrifos.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-  <nav class="navbar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aury</title>
+    <link rel="stylesheet" href="./css/hierogrifos.css" />
+    <link rel="stylesheet" href="./css/timer_flutuante.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
       <div class="logo">Aury</div>
       <ul class="nav-links">
         <li><a href="home.html">Início</a></li>
@@ -17,44 +21,57 @@
         <li><a href="#">Perfil</a></li>
       </ul>
     </nav>
-  <section id="intro" class="section intro-section">
-    <div class="content-wrapper">
-      <h1>Arco da inovação positiva</h1>
-      <p>
-        Ao longo dos anos muitas inovações fizeram a diferença. Como a Pedra de Roseta que foi fundamental para que os estudiosos pudessem entender a escrita egípcia antiga.
-      </p>
-      <p>
-        Traduza um pedaço de hieróglifo como os estudiosos que traduziram as escritas da pedra
-      </p>
 
-      <img id="scroll-down" class="arrow-image" src="./image/arrow.png" alt="Seta para baixo" />
+    <div id="floating-relogio-container" class="floating-relogio-container">
+    <img src="./image/relogio.png" alt="Relógio Flutuante" class="relogio-flutuante-img" />
+    <div id="floating-timer-display" class="floating-timer-display">05:00</div>
+</div>
+
+    <section id="intro" class="section intro-section">
+      <div class="content-wrapper">
+        <h1>Arco da inovação positiva</h1>
+        <p>
+          Ao longo dos séculos, grandes inovações mudaram o mundo como a Pedra de Roseta, que revelou o mistério da escrita egípcia.
+        </p>
+        <p>
+          Agora é a sua vez. Traduza um fragmento de hieróglifo e prove que o espírito humano dedescoberta e conexão ainda vive em nós.
+        </p>
+
+        <img
+          id="scroll-down"
+          class="arrow-image"
+          src="./image/arrow.png"
+          alt="Seta para baixo"
+        />
+      </div>
+    </section>
+
+    <section class="game-section">
+      <div class="guia">
+        <img src="./image/guia.png" alt="Tabela de hieróglifos" />
+      </div>
+
+      <div class="guia-frase">
+        <img src="./image/guiafrase.png" alt="Frase de hieróglifos" />
+      </div>
+
+      <div class="resposta">
+        <label for="answer">Digite aqui sua resposta:</label><br />
+        <input id="answer" type="text" />
+      </div>
+    </section>
+
+    <div id="congrats-popup" class="popup-overlay" aria-hidden="true">
+      <div class="popup-content">
+        <h2>Parabéns!</h2>
+        <p>Você traduziu os hierógrifos!</p>
+        <button id="next-game-btn">Próximo jogo</button>
+      </div>
     </div>
-  </section>
 
-  <section class="game-section">
-    <div class="guia">
-      <img src="./image/guia.png" alt="Tabela de hieróglifos" />
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="./js/hierogrifos.js"></script>
+        <script src="./js/timer_flutuante.js"></script>
 
-    <div class="guia-frase">
-      <img src="./image/guiafrase.png" alt="Frase de hieróglifos" />
-    </div>
-
-    <div class="resposta">
-      <label for="answer">Digite aqui sua resposta:</label><br />
-      <input id="answer" type="text"/>
-    </div>
-  </section>
-
-  <div id="congrats-popup" class="popup-overlay" aria-hidden="true">
-    <div class="popup-content">
-      <h2>Parabéns!</h2>
-      <p>Você traduziu os hierógrifos!</p>
-      <button id="next-game-btn">Próximo jogo</button>
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="./js/hierogrifos.js"></script>
-</body>
+  </body>
 </html>
