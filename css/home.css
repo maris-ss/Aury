@@ -594,3 +594,22 @@ p .highlight {
   0%, 100% { transform: scale(0.9); }
   50% { transform: scale(1); } 
 }
+/* vídeo em full screen */
+#intro-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 9999;
+}
+
+/* reutiliza a classe .hidden que você usou no login */
+.hidden {
+  display: none !important;
+}
+
+.tweakpane {
+  display: none !important;
+}

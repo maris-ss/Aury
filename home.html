@@ -15,223 +15,185 @@
     />
   </head>
   <body>
+    <!-- Vídeo de introdução -->
+    <video id="intro-video" autoplay muted playsinline preload="auto">
+      <source src="./image/intro.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeo HTML5.
+    </video>
 
-    <img
-      src="./image/treco1.svg"
-      alt="Decoração topo direita"
-      class="decor-top-right"
-    />
-    <img
-      src="./image/treco2.svg"
-      alt="Decoração bottom esquerda"
-      class="decor-bottom-left"
-    />
-    <nav class="navbar">
-      <!-- <img src="./image/Aury.png" alt="Aury Logo" class="logo-img" /> -->
-      <div class="logo">Aury</div>
-      <ul class="nav-links">
-        <li><a href="home.html">Início</a></li>
-        <li><a href="home.html#arcos">Arcos</a></li>
-        <!-- <li><a href="loja.html">Loja</a></li>
-        <li><a href="#">Perfil</a></li> -->
-      </ul>
-    </nav>
+    <!-- Conteúdo principal da página (inicialmente escondido) -->
+    <div id="main-content" class="hidden">
+      <img src="./image/treco1.svg" alt="Decoração topo direita" class="decor-top-right" />
+      <img src="./image/treco2.svg" alt="Decoração bottom esquerda" class="decor-bottom-left" />
 
-    <header>
-      <img
-        src="./image/gradientiiir.png"
-        alt="imagem topo"
-        class="fixed-image"
-      />
-      <div class="title-top">
-        <h1>Bem-vindo</h1>
-      </div>
-      <div class="text-center">
-        <p>
-          A IA está querendo dominar a nossa humanidade e você não pode deixar issso acontecer! Mostre á ela o que nos torna únicos: <span class="highlight">sentir</span>.
-        </p>
-        <p>
-          Nessa jornada você passará por 4 mini jogos que convencerão a IA se que você deve viver!
-        </p>
-      </div>
-    </header>
-    <main>
-      <section class="content fluid">
-        <h2>
-          <span aria-hidden="true">Sinta sua&nbsp;</span>
-          <span class="sr-only">you can ship things.</span>
-        </h2>
-        <ul aria-hidden="true" style="--count: 22">
-          <li style="--i: 0">verdade.</li>
-          <li style="--i: 1">saudade.</li>
-          <li style="--i: 2">felicidade.</li>
-          <li style="--i: 3">criatividade.</li>
-          <li style="--i: 4">lealdade.</li>
-          <li style="--i: 5">bondade.</li>
-          <li style="--i: 6">inteligência.</li>
-          <li style="--i: 7">alegria.</li>
-          <li style="--i: 8">nostalgia.</li>
-          <li style="--i: 9">amizade.</li>
-          <li style="--i: 10">família.</li>
-          <li style="--i: 11">ignorência.</li>
-          <li style="--i: 12">tristeza.</li>
-          <li style="--i: 13">raiva.</li>
-          <li style="--i: 14">risada.</li>
-          <li style="--i: 15">sensibilidade.</li>
-          <li style="--i: 16">infância.</li>
-          <li style="--i: 17">memória.</li>
-          <li style="--i: 18">história.</li>
-          <li style="--i: 19">vida.</li>
-          <li style="--i: 20">humanidade.</li>
-          <li style="--i: 21">alma.</li>
+      <nav class="navbar">
+        <div class="logo">Aury</div>
+        <ul class="nav-links">
+          <li><a href="home.html">Início</a></li>
+          <li><a href="home.html#arcos">Arcos</a></li>
         </ul>
-      </section>
+      </nav>
 
-      <section id="arcos" class="arcos-section">
-        <p>Essa será sua tragerória, preste muita atenção!</p>
-        <div class="arcos">
-          <div class="arco elipse" >
-            <img src="./image/esfera1.png" class="esfera esfera1" />
-            <span>1.</span>
-          </div>
-          <div class="arco elipse">
-            <img src="./image/esfera2.png" class="esfera esfera2" />
-            <span>2.</span>
-          </div>
-          <div class="arco elipse">
-            <img src="./image/esfera3.png" class="esfera esfera3" />
-            <span>3.</span>
-          </div>
-          <div class="arco elipse">
-            <img src="./image/esfera4.png" class="esfera esfera4" />
-            <span>4.</span>
-          </div>
+      <header>
+        <img src="./image/gradientiiir.png" alt="imagem topo" class="fixed-image" />
+        <div class="title-top"><h1>Bem-vindo</h1></div>
+        <div class="text-center">
+          <p>
+            A IA está querendo dominar a nossa humanidade e você não pode deixar isso acontecer! 
+            Mostre a ela o que nos torna únicos: <span class="highlight">sentir</span>.
+          </p>
+          <p>
+            Nessa jornada você passará por 4 mini jogos que convencerão a IA de que você deve viver!
+          </p>
         </div>
+      </header>
 
-        <div class="textos-legenda">
-          <div class="texto-arco">
-            <p>Arco da <br> arte e cultura</p>
-          </div>
-          <div class="texto-arco">
-            <p>Arco das <br> emoções</p>
-          </div>
-          <div class="texto-arco">
-            <p>Arco da <br> inovação</p>
-          </div>
-          <div class="texto-arco">
-            <p>Arco da <br> resiliência</p>
-          </div>
-        </div>
-
+      <main>
+        <section class="content fluid">
+          <h2><span aria-hidden="true">Sinta sua&nbsp;</span></h2>
+          <ul aria-hidden="true" style="--count: 22">
+            <li style="--i: 0">verdade.</li>
+            <li style="--i: 1">saudade.</li>
+            <li style="--i: 2">felicidade.</li>
+            <li style="--i: 3">criatividade.</li>
+            <li style="--i: 4">lealdade.</li>
+            <li style="--i: 5">bondade.</li>
+            <li style="--i: 6">inteligência.</li>
+            <li style="--i: 7">alegria.</li>
+            <li style="--i: 8">nostalgia.</li>
+            <li style="--i: 9">amizade.</li>
+            <li style="--i: 10">família.</li>
+            <li style="--i: 11">ignorância.</li>
+            <li style="--i: 12">tristeza.</li>
+            <li style="--i: 13">raiva.</li>
+            <li style="--i: 14">risada.</li>
+            <li style="--i: 15">sensibilidade.</li>
+            <li style="--i: 16">infância.</li>
+            <li style="--i: 17">memória.</li>
+            <li style="--i: 18">história.</li>
+            <li style="--i: 19">vida.</li>
+            <li style="--i: 20">humanidade.</li>
+            <li style="--i: 21">alma.</li>
+          </ul>
         </section>
+
+        <section id="arcos" class="arcos-section">
+          <p>Essa será sua trajetória, preste muita atenção!</p>
+          <div class="arcos">
+            <div class="arco elipse"><img src="./image/esfera1.png" class="esfera esfera1" /><span>1.</span></div>
+            <div class="arco elipse"><img src="./image/esfera2.png" class="esfera esfera2" /><span>2.</span></div>
+            <div class="arco elipse"><img src="./image/esfera3.png" class="esfera esfera3" /><span>3.</span></div>
+            <div class="arco elipse"><img src="./image/esfera4.png" class="esfera esfera4" /><span>4.</span></div>
+          </div>
+
+          <div class="textos-legenda">
+            <div class="texto-arco"><p>Arco da <br> arte e cultura</p></div>
+            <div class="texto-arco"><p>Arco das <br> emoções</p></div>
+            <div class="texto-arco"><p>Arco da <br> inovação</p></div>
+            <div class="texto-arco"><p>Arco da <br> resiliência</p></div>
+          </div>
+        </section>
+
         <section class="arcos-section">
-          <p>Quando se sentir pronto 
-clique para iniciar seu cronômetro e <br> iniciar os jogos antes que o tempo acabe</p>
+          <p>
+            Quando se sentir pronto, clique para iniciar seu cronômetro e 
+            iniciar os jogos antes que o tempo acabe
+          </p>
 
-            <div class="relogio-container">
-  <img src="./image/relogio.png" alt="relógio" class="relogio" />
-  <div class="timer">05:00</div>
-</div>
-          
-        <div>
-          <img
-      src="./image/treco3.svg"
-      alt="Decoração topo direita"
-      class="decor-top-right"
-    />
-    <img
-      src="./image/treco4.svg"
-      alt="Decoração bottom esquerda"
-      class="decor-bottom-left"
-    />
-        </div>
-        <div class="align-btn">
-          <button
-            class="floating-btn"
-          >
-            Iniciar
-          </button>
-        </div>
+          <div class="relogio-container">
+            <img src="./image/relogio.png" alt="relógio" class="relogio" />
+            <div class="timer">05:00</div>
+          </div>
+
+          <div>
+            <img src="./image/treco3.svg" alt="Decoração topo direita" class="decor-top-right" />
+            <img src="./image/treco4.svg" alt="Decoração bottom esquerda" class="decor-bottom-left" />
+          </div>
+
+          <div class="align-btn">
+            <button class="floating-btn">Iniciar</button>
+          </div>
         </section>
+      </main>
+    </div> <!-- fim do main-content -->
 
-        
-      
-    </main>
-
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="./js/timer_flutuante.js"></script>
-    
-    <script src="./js/home.js"></script>
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.querySelector(".floating-btn");
-        
-        // Defina a chave de expiração aqui, igual à do seu timer_flutuante.js
-        const EXPIRY_KEY = "game_expiry_time"; 
+    <script type="module" src="./js/home.js"></script>
 
-        if (!btn) {
-            console.error("Erro: Botão de Iniciar não encontrado!");
-            return;
+    <!-- Script do vídeo -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const video = document.getElementById("intro-video");
+        const mainContent = document.getElementById("main-content");
+
+        if (!video || !mainContent) return;
+
+        const revealContent = () => {
+          video.classList.add("hidden");
+          mainContent.classList.remove("hidden");
+        };
+
+        video.addEventListener("ended", revealContent);
+        video.addEventListener("error", revealContent);
+
+        // Tenta iniciar o vídeo; se o navegador bloquear, mostra conteúdo
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => revealContent());
         }
 
+        // fallback: se vídeo não começar após 2s, mostra conteúdo
+        setTimeout(() => {
+          if (video.paused) revealContent();
+        }, 2000);
+      });
+    </script>
+
+    <!-- Botão e Timer -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.querySelector(".floating-btn");
+        const EXPIRY_KEY = "game_expiry_time"; 
+        if (!btn) return;
         let iniciado = false;
 
         btn.addEventListener("click", () => {
-            if (iniciado) return;
+          if (iniciado) return;
+          iniciado = true;
+          btn.disabled = true;
 
-            iniciado = true;
-            btn.disabled = true;
-            
-            // --- INÍCIO DA CORREÇÃO ---
-            // 1. Define o tempo de expiração GLOBAL no localStorage
-            const durationMs = 5 * 60 * 1000; // 5 minutos em milissegundos
-            const expiryTime = Date.now() + durationMs;
-            
-            // Salva o timestamp exato de quando o jogo deve terminar
-            localStorage.setItem(EXPIRY_KEY, expiryTime.toString());
-            // --- FIM DA CORREÇÃO ---
+          const durationMs = 5 * 60 * 1000;
+          const expiryTime = Date.now() + durationMs;
+          localStorage.setItem(EXPIRY_KEY, expiryTime.toString());
+          iniciarContagem();
 
-            // 2. Inicia o Cronômetro (o timer local da home)
-            iniciarContagem();
-            
-            // 3. Redirecionamento
-            setTimeout(() => {
-                window.location.href = "jogopuzzle.html";
-            }, 2600); 
+          setTimeout(() => {
+            window.location.href = "jogopuzzle.html";
+          }, 2600);
         });
 
-        // Esta função agora serve apenas para o timer GRANDE da home
         function iniciarContagem() {
-            let segundosTotais = 5 * 60; 
-            const timerEl = document.querySelector(".timer");
+          let segundosTotais = 5 * 60;
+          const timerEl = document.querySelector(".timer");
+          if (!timerEl) return;
 
-            if (!timerEl) {
-                console.error("Elemento .timer não encontrado!");
-                return;
-            }
+          function atualizarDisplay() {
+            const minutos = Math.floor(segundosTotais / 60);
+            const segundos = segundosTotais % 60;
+            timerEl.textContent = `${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`;
+          }
 
-            function atualizarDisplay() {
-                const minutos = Math.floor(segundosTotais / 60);
-                const segundos = segundosTotais % 60;
-                timerEl.textContent = `${String(minutos).padStart(2, "0")}:${String(
-                    segundos
-                ).padStart(2, "0")}`;
-            }
-
-            atualizarDisplay(); 
-
-            const intervalo = setInterval(() => {
-                segundosTotais--;
-                atualizarDisplay();
-
-                if (segundosTotais <= 0) {
-                    clearInterval(intervalo);
-                }
-            }, 1000);
+          atualizarDisplay();
+          const intervalo = setInterval(() => {
+            segundosTotais--;
+            atualizarDisplay();
+            if (segundosTotais <= 0) clearInterval(intervalo);
+          }, 1000);
         }
-    });
-</script>
-    
+      });
+    </script>
   </body>
 </html>

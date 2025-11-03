@@ -1,4 +1,4 @@
-import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
+// import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
 import gsap from "https://cdn.skypack.dev/gsap@3.12.0";
 import ScrollTrigger from "https://cdn.skypack.dev/gsap@3.12.0/ScrollTrigger";
 
